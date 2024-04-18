@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="Initi" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="initi"/>
+			<item value="pozice"/>
+			<item value="uint8_t"/>
+			<item value="0x22"/>
+			<item value="prevhand"/>
+			<item value="Display"/>
+			<item value="hand"/>
+			<item value="-&gt;"/>
+			<item value="first"/>
+			<item value="."/>
+			<item value="a"/>
+			<item value="2"/>
+			<item value="drawPoint"/>
+			<item value="point-&gt;y"/>
+			<item value="point-&gt;x"/>
+		</list>
+		<list key="replacehistory">
+			<item value="loc"/>
+			<item value="int"/>
+			<item value="hand"/>
+			<item value="Hide"/>
+			<item value="prevhand"/>
+			<item value="."/>
+			<item value="-&gt;"/>
+			<item value="second"/>
+			<item value="d"/>
+			<item value="c"/>
+			<item value="b"/>
+			<item value="4"/>
+			<item value="Point::Display"/>
+			<item value="y"/>
+			<item value="x"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="314" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="443" key="DIALOG_HEIGHT"/>
+		<item value="1261" key="DIALOG_X_ORIGIN"/>
+		<item value="160" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

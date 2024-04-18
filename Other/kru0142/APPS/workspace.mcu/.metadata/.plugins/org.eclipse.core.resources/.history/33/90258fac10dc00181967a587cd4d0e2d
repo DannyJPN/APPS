@@ -1,0 +1,386 @@
+// **************************************************************************
+//
+//               Demo program for labs
+//
+// Subject:      Computer Architectures and Parallel systems
+// Author:       Petr Olivka, petr.olivka@vsb.cz, 08/2016
+// Organization: Department of Computer Science, FEECS,
+//               VSB-Technical University of Ostrava, CZ
+//
+// File:         Main programm for I2C bus
+//
+// **************************************************************************
+
+#include <mbed.h>
+
+#include "i2c-lib.h"
+#include "si4735-lib.h"
+
+//************************************************************************
+
+// Direction of I2C communication
+#define R	0b00000001
+#define W	0b00000000
+
+Serial pc( USBTX, USBRX );
+
+#pragma GCC diagnostic ignored "-Wunused-but-set-variable"
+
+class LedBar
+{
+public:
+	int address;
+	int barlength;
+	 LedBar(int add)
+		{
+		address=add;
+
+		}
+	 uint8_t Column(uint8_t len)
+		{
+
+
+		 	if(len <8)
+		 	{
+		 		return 0xFF >>(8-len);
+		 	}
+		 	else
+		 	{
+		 		len=8;
+		 		return 0xFF;
+		 	}
+
+
+		}
+	 void SetBar(uint8_t len,uint8_t ack = 0)
+	 {
+		 	 barlength=len;
+			// start communication
+			I2C_Start();
+
+			// PCF8574 addressing
+			// The address is composed from 3 parts!
+
+			ack = I2C_Output( 0x40| address<<1 | W );
+
+			// Check ack! Return value must be 0!
+			// ....
+
+			if(ack ==0 )
+			{
+				ack = I2C_Output( Column(len));
+
+			}
+
+			// selected LEDs should light
+
+			// stop communication
+			I2C_Stop();
+
+	 }
+
+
+};
+
+class Radio
+{
+	public:
+	int volume,freq;
+	Radio(int vol,int freq_time_100)
+		{
+		volume = vol;
+		freq=freq_time_100;
+		}
+	void SetFreqAuto(bool directionup)
+	{			uint8_t ack=0;
+
+				pc.printf( "\nAutoTunig of radio station...\r\n" );
+
+				// Required frequency in MHz * 100
+				//int freq = radio.GetFreq();
+				//freq =10140; // Radiozurnal
+
+
+				uint8_t arg = 0b00001100&(directionup?0x04:0x0C);
+				// Tuning of radio station
+				I2C_Start();
+				ack |= I2C_Output( SI4735_address | W );
+				ack |= I2C_Output( 0x21 );			// FM_SEEK_START
+				ack |= I2C_Output( arg);			// ARG1
+
+				I2C_Stop();
+				// Check ack!
+				// if...
+				if(ack ==0)
+				{
+					printf("station not tuned");
+
+				}
+
+	}
+	void SetVolume(int vol,LedBar bar)
+	{
+
+		if(vol <0||vol>63)
+		{
+			printf("Volume out of range");
+			return;
+		}
+		uint8_t ack=0;
+		volume=vol;
+		//Volume set
+
+
+				I2C_Start();
+				ack |= I2C_Output( SI4735_address | W );
+				ack |= I2C_Output( 0x12 );			// SET_PROPERTY
+				ack |= I2C_Output( 0x00 );			// ARG1
+				ack |= I2C_Output( 0x40 );			// subcom RX_VOLUME HI
+				ack |= I2C_Output( 0x00 );	       // subcom RX_VOLUME LO
+				ack |= I2C_Output( 0x00 );
+				ack |= I2C_Output( 0x00|vol);			// ARG4
+				I2C_Stop();
+			bar.SetBar((vol+1)/8);
+
+
+	}
+	int GetVolume()
+	{
+		return volume;
+
+	}
+	void SetFreq(int freq_time_100)
+	{
+		freq=freq_time_100;
+		uint8_t ack=0;
+		freq -=freq%10;
+
+		pc.printf( "\nTunig of radio station...\r\n" );
+
+		// Required frequency in MHz * 100
+		//int freq = radio.GetFreq();
+		//freq =10140; // Radiozurnal
+
+
+
+		// Tuning of radio station
+		I2C_Start();
+		ack |= I2C_Output( SI4735_address | W );
+		ack |= I2C_Output( 0x20 );			// FM_TUNE_FREQ
+		ack |= I2C_Output( 0x00 );			// ARG1
+		ack |= I2C_Output( freq >> 8 );		// ARG2 - FreqHi
+		ack |= I2C_Output( freq & 0xff );	// ARG3 - FreqLo
+		ack |= I2C_Output( 0x00 );			// ARG4
+		I2C_Stop();
+		// Check ack!
+		// if...
+		if(ack ==0)
+		{
+			printf("station not tuned");
+
+		}
+
+
+
+		// Tuning process inside SI4735
+		wait_ms( 100 );
+		printf( "... station tuned.\r\n\n" );
+
+
+
+	}
+	int GetFreq()
+	{
+		//return freq;
+uint8_t ack=0;
+uint8_t S1, S2, RSSI, SNR, MULT, CAP;
+		// Example of reading of tuned frequency
+		I2C_Start();
+		ack |= I2C_Output( SI4735_address | W );
+		ack |= I2C_Output( 0x22 );			// FM_TUNE_STATUS
+		ack |= I2C_Output( 0x00 );			// ARG1
+		// repeated start
+		I2C_Start();
+		// change direction of communication
+		ack |= I2C_Output( SI4735_address | R );
+		// read data
+		S1 = I2C_Input();
+		I2C_Ack();
+		S2 = I2C_Input();
+		I2C_Ack();
+		int freq = (int) I2C_Input() << 8;
+		I2C_Ack();
+		freq |= I2C_Input();
+		I2C_Ack();
+		RSSI = I2C_Input();
+		I2C_Ack();
+		SNR = I2C_Input();
+		I2C_Ack();
+		MULT = I2C_Input();
+		I2C_Ack();
+		CAP = I2C_Input();
+		I2C_NAck();
+		I2C_Stop();
+
+		if ( ack != 0 )
+			printf( "Communication error!\r\n" );
+		else
+			printf( "Current tuned frequency: %d.%dMHz\r\n", freq / 100, freq % 100 );
+
+
+
+	}
+	char RDS[64];
+	void GetRDS()
+	{
+        uint8_t ack = 0;
+        I2C_Start();
+        ack |= I2C_Output( SI4735_address | W );
+        ack |= I2C_Output( 0x24 );          // RDS
+        ack |= I2C_Output( 0x01 );          // ARG
+        I2C_Start();
+        ack |= I2C_Output( SI4735_address | R );
+        uint8_t STATUS = I2C_Input();
+        I2C_Ack();
+        uint8_t RESP1 = I2C_Input();
+        I2C_Ack();
+        uint8_t RESP2 = I2C_Input();
+        I2C_Ack();
+        uint8_t RESP3 = I2C_Input();
+        I2C_Ack();
+        uint8_t RESP4 = I2C_Input(); // BLOCK A HI
+        I2C_Ack();
+        uint8_t RESP5 = I2C_Input(); // LO
+        I2C_Ack();
+        uint8_t RESP6 = I2C_Input(); // BLOCK B HI
+        I2C_Ack();
+        uint8_t RESP7 = I2C_Input();
+        I2C_Ack();
+        uint8_t RESP8 = I2C_Input(); // BLOCK C HI
+        I2C_Ack();
+        uint8_t RESP9 = I2C_Input();
+        I2C_Ack();
+        uint8_t RESP10 = I2C_Input(); // BLOCK D HI
+        I2C_Ack();
+        uint8_t RESP11 = I2C_Input();
+        I2C_NAck();
+        I2C_Stop();
+        if(ack != 0)
+        {
+            printf( "Communication error!\r\n" );
+        }
+
+        if((RESP2 & 0x01) != 0x01 )
+        {
+          return;
+        }
+
+        //RDS TYPE CODE 0b0010
+        if((RESP6 & 0x20) == 0x20)
+        {
+
+            printf("RT : %c %c %c %c\r\n", RESP8, RESP9, RESP10, RESP11);
+            printf("Loc: %d\r\n", RESP7 & 0x0F);
+            int pozice = (RESP7 & 0x0F) * 4;
+            RDS[pozice] = RESP8;
+            RDS[pozice +1] = RESP9;
+            RDS[pozice +2] = RESP10;
+            RDS[pozice +3] = RESP11;
+            for(int i; i<64; i++)
+            {
+                printf("%c", RDS[i]);
+            }
+            printf("\r\n");
+        }
+        else return;
+	}
+
+};
+
+
+
+
+
+
+int main( void )
+{
+	//uint8_t S1, S2, RSSI, SNR, MULT, CAP;
+	uint8_t ack = 0;
+	LedBar bar(4);
+	Radio radio(40,10140);
+
+	DigitalOut Left(PTC9);
+	DigitalOut Right(PTC10);
+	DigitalOut Shift1(PTC11);
+	DigitalOut Shift2(PTC12);
+
+	I2C_Init();
+
+	pc.baud( 115200 );
+	pc.printf( "K64F-KIT ready...\r\n" );
+
+	// communication with 8 bit expander PCF8574
+
+
+
+
+
+	if ( ( ack = SI4735_Init() ) != 0 )
+	{
+		pc.printf( "Initialization of SI4735 finish with error (%d)\r\n", ack );
+		return 0;
+	}
+	else
+		pc.printf( "SI4735 initialized.\r\n" );
+
+	
+	radio.SetFreq(8900);
+
+	radio.SetVolume(30,bar);
+
+	radio.GetFreq();
+
+
+	if((!Left)&&Shift1&&Shift2)
+	{
+		radio.SetVolume(radio.GetVolume()-1,bar);
+
+	}
+	if((!Right)&&Shift1&&Shift2)
+	{
+		radio.SetVolume(radio.GetVolume()+1,bar);
+
+	}
+	if((!Left)&&!Shift1)
+	{
+		radio.SetFreqAuto(true);
+
+	}
+	if((!Right)&&(!Shift1))
+	{
+		radio.SetFreqAuto(false);
+
+	}
+	if((!Left)&&(!Shift2))
+	{
+		radio.SetFreq(radio.freq-10);
+
+	}
+	if((!Right)&&(!Shift2))
+	{
+		radio.SetFreq(radio.freq+10);
+
+	}
+
+
+
+
+
+
+
+
+	return 0;
+}
+
+
+

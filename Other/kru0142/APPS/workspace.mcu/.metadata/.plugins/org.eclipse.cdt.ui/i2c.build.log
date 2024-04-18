@@ -1,0 +1,7 @@
+08:49:51 **** Incremental Build of configuration Debug for project i2c ****
+make -r -j4 linker-script-debug.ld all 
+make: 'linker-script-debug.ld' is up to date.
+make: Nothing to be done for 'all'.
+
+08:49:51 Build Finished (took 68ms)
+

@@ -1,0 +1,1020 @@
+<!Doctype html>
+<html class="no-js" lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//cdn.programiz.com" />
+<!--[if IE 9]>
+<link rel="prefetch" href="//cdn.programiz.com" />
+<![endif]-->
+<link rel="shortcut icon" href="//cdn.programiz.com/sites/tutorial2program/files/c-favicons.png" type="image/png" />
+<meta name="description" content="In this comprehensive guide to C programming, you will be introduced to everything from C applications to running your first C program (along with complete C tutorials)." />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="https://www.programiz.com/c-programming" />
+<link rel="shortlink" href="https://www.programiz.com/node/487" />
+<meta name="google-site-verification" content="17JZPeRuYVi-HGRJIG06Wx4uVrQSGPSGk7RLbZ7LaTA" />
+<meta name="msvalidate.01" content="AC4EA77B0980B7169F9EEC142ADCC15B" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKXT7MH');</script>
+<!-- End Google Tag Manager -->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '123000288571689');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=123000288571689&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<script type="text/javascript" src="//dsh7ky7308k4b.cloudfront.net/publishers/Programizcom.min.js"></script>
+
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+
+<script>
+  googletag.cmd.push(function() {
+	if(window.innerWidth > 768){
+   googletag.defineSlot('/8095840/.2_A.34657.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-1527670429257-0').addService(googletag.pubads());
+   googletag.defineSlot('/8095840/.2_A.34660.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-1527670429257-1').addService(googletag.pubads());
+    
+  }
+	else{
+   googletag.defineSlot('/8095840/.2_A.34653.4_Programiz.com_tier1', [300, 250], 'div-gpt-ad-1527670353707-0').addService(googletag.pubads());
+	}	
+		googletag.enableServices();
+	  });
+	</script>
+  <title>Learn C (Introduction and Tutorials to C Programming)</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_WSgzCiaLFuERen0TMp4LzgnjcxS3tn-QyZRD85wZ2cs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_3I03pJits2CKnSomFtyZgUmNkiDHMl2HjyoOrdsGu_8.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_VWGhZkkR4B4tMJA7PC_wov8dAxaI-MS03BCM3K8jjJA.css" media="screen" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_36JbTIbHkX9TeP0yu3dTHrOHbHF-6-_qVnhNK0wAa7k.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_RiWFi-q4j3G0Aw5fZdXsjvTWl3NDus9dZ2ItXZM9PXQ.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_KSDuncL3a0LNVD2BrVz2FDdhh9wNT1xggGDLFHu2al0.css" media="all" />
+<link type="text/css" rel="stylesheet" href="//cdn.programiz.com/sites/tutorial2program/files/cdn/css/https/css_5aQvY9eDN5XIiayMtb_05FejVu1px73z0dS0wFjNJKo.css" media="all" />
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_vSmhpx_T-AShyt_WMW5_TcwwxJP1imoVOa8jvwL_mxE.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery.ui || document.write("<script src='/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery-ui.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_Xdog1yvbsHUl33-wo9ctRnQMgE_3uBBG15y3yJm_2eY.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_6mtNsXgWzNZac4UBJK9kpj3XdXTz7NcBgjY5eMSdK94.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-36675496-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_wM3ZVQV_RMgznHQKpN4op7713uyo_WqRmvODZE-pr1E.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_1idk1Z3VP3hlw_7ergGcv0EkKW5OmiHkq_oP2y09WAM.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"c","theme_token":"QIYNHForgaQvzhJjG5SZ28tkLKQXvTDH_hkINdxcRTs","js":{"sites\/all\/libraries\/prettify\/prettify.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.10.2\/jquery.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/ajax.googleapis.com\/ajax\/libs\/jqueryui\/1.10.2\/jquery-ui.min.js":1,"1":1,"sites\/all\/modules\/codefilter\/codefilter.js":1,"sites\/all\/modules\/search_autocomplete\/js\/jquery.autocomplete.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"2":1,"sites\/all\/themes\/Ultimate\/js\/toc.js":1,"sites\/all\/themes\/Ultimate\/sidr-package-1.2.1\/jquery.sidr.min.js":1,"sites\/all\/themes\/Ultimate\/js\/plugins.js":1,"sites\/all\/themes\/Ultimate\/js\/main.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.menu.css":1,"misc\/ui\/jquery.ui.autocomplete.css":1,"sites\/all\/modules\/codefilter\/codefilter.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/quiz\/quiz.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/search_autocomplete\/css\/themes\/basic-blue.css":1,"sites\/all\/themes\/Ultimate\/css\/title-page.css":1,"sites\/all\/themes\/Ultimate\/css\/normalize.css":1,"sites\/all\/themes\/Ultimate\/css\/main.css":1,"sites\/all\/themes\/Ultimate\/sidr-package-1.2.1\/stylesheets\/jquery.sidr.dark.css":1,"sites\/all\/themes\/c\/c.css":1,"sites\/all\/modules\/prettify\/styles\/stackoverflow.css":1}},"prettify":{"linenums":false,"match":"","nocode":"nocode","custom":[],"markup":{"precode":true,"code":false,"pre":false}},"search_autocomplete":{"form6":{"selector":"#search-api-page-search-form[action=\u0022\/searchh\u0022] #edit-keys-2","minChars":"3","max_sug":"10","type":"internal","datas":"https:\/\/www.programiz.com\/search_autocomplete\/autocomplete\/6\/","fid":"6","theme":"basic-blue","auto_submit":"1","auto_redirect":"1"},"form7":{"selector":"#search-api-page-search-form-simplest-programming-tutorials-f #edit-keys-2","minChars":"3","max_sug":"10","type":"internal","datas":"https:\/\/www.programiz.com\/search_autocomplete\/autocomplete\/7\/","fid":"7","theme":"basic-blue","auto_submit":"1","auto_redirect":"1"}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"urlIsAjaxTrusted":{"\/c-programming":true}});
+//--><!]]>
+</script>
+</head>
+<body>
+    	  <div class="region region-after-body">
+    <div id="block-block-129" class="block block-block">
+
+    
+  <div class="content">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKXT7MH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->  </div>
+</div>
+<div id="block-block-152" class="block block-block">
+
+    
+  <div class="content">
+    <style>
+
+    .fancy-premium {
+        background: white;
+    }
+
+     .light .fancy-cross, .light .fancy-text, .light .fancy-text strong {
+           color: rgb(72, 72, 94);
+     }
+   
+     .light .fancy-cross {
+              position: fixed;
+right: 0px;
+top: 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50px;
+height: 50px;
+     }
+     
+     .fancy-text {
+        color: rgb(72, 72, 94);
+    }
+
+    .fancy-sign-up {
+         float: left;
+         width: 100px;
+    }
+
+</style>
+
+<script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+ function getParameterByName(name, url) {
+	    if (!url) url = window.location.href;
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function ths_ad() {
+        var fancyCode = '<div class="light fancy-premium clearfix"><a href="http://www.thehackingschool.com/web-development.html?r=programiz" rel="nofollow" class="fancy-premium-wrapper"><div class="fancy-logo"><img src="//cdn.programiz.com/sites/tutorial2program/files/the-hacking-school-logo.png" style="width:75px" /></div><div class="fancy-text"><strong>Learning How To Code Will Never Go Out Of Fashion. </strong>Apply for the next Cohort at India\'s Finest Coding Bootcamp</div><div class="fancy-sign-up">Learn More</div></a><div class="fancy-cross">x</div></div>'
+                jQuery("footer").append(fancyCode);
+}
+
+
+(function($) {
+     
+      var testmode = getParameterByName('testmode');
+   //   if(!testmode) return;
+/*      $.getJSON('https://freegeoip.net/json/', function (location) {
+            var country = location.country_name;
+            switch (country) {
+                case "Nepal":
+                    ths_ad();
+                    break;
+               case "India":
+                  ths_ad();
+                  break;
+                default: 
+                     if (typeof _bsa !== 'undefined' && _bsa) {
+                               _bsa.init('flexbar', 'CKYDL2Q7', 'placement:programizcom');
+                      }
+            }
+        });
+*/
+if (typeof _bsa !== 'undefined' && _bsa) {
+                               _bsa.init('flexbar', 'CKYDL2Q7', 'placement:programizcom');
+                      }
+})(jQuery);
+
+</script>  </div>
+</div>
+  </div>
+
+<div id="programiz-header" class="nav-down clearfix">
+<header class="header-wrapper">
+<div class="logo-header-wrapper clearfix">
+
+    
+<div class="logo">
+<a href="/c-programming" title="C Programming">C Programming Logo</a>
+</div>
+
+<div class="secondary-nav">
+    <ul>
+        <li><a href="/cpp-programming" title="C++">C++</a></li>
+        <li><a href="/python-programming" title="Python Tutorial">Python</a></li>
+        <li><a href="/r-programming" title="R Tutorial">R Tutorial</a></li>
+        <li><a href="/java-programming" title="Java Tutorial">Java</a></li>
+        <li><a href="/kotlin-programming" title="Kotlin Tutorial">Kotlin</a></li>
+    </ul>
+</div>
+
+</div>
+<div class="main-nav-wrapper clearfix">
+<div>
+	<nav class="main-nav">
+        <h2>MENU</h2>
+        <ul>
+            <li class="desktop-only"><a class="material-icons" title= "Programiz Home" href="/" >home</a></li>
+            <li><a class="c-programming" title="C Tutorial" href="/c-programming">Tutorial</a></li>
+            <li><a title="C Examples" class="c-programming" href="/c-programming/examples">Examples</a></li>
+            <li class="desktop-only"><a class="c-programming" title="C Library Functions" href="/c-programming/library-function">Library Functions</a></li>
+        </ul>
+    </nav>
+<a href="" class="material-icons search-icon">search</a>
+</div>
+</div>
+</header>
+</div>
+<!-- programiz-header End -->
+<div id="search-area" class="clearfix">
+<span class="material-icons">close</span>
+  <div class="region region-search">
+    <div id="block-search-api-page-simplest-programming-tutorials-f" class="block block-search-api-page">
+
+    <h2>Simplest programming tutorials for beginners</h2>
+  
+  <div class="content">
+    <form action="/c-programming" method="post" id="search-api-page-search-form-simplest-programming-tutorials-f" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-keys-2">
+  <label class="element-invisible" for="edit-keys-2">What do you want to learn today? </label>
+ <input placeholder="Example: Python list" type="text" id="edit-keys-2" name="keys_2" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<input type="hidden" name="id" value="2" />
+<input type="submit" id="edit-submit-2" name="op" value="Go" class="form-submit" /><input type="hidden" name="form_build_id" value="form-rM0U7QaM56bY08ROklDq3pgpqcAJ9p1uzjw1ABWxtb0" />
+<input type="hidden" name="form_id" value="search_api_page_search_form_simplest_programming_tutorials_f" />
+</div></form>  </div>
+</div>
+  </div>
+</div>
+<section id="title-page-wrapper" class="clearfix">
+<div class="tabs"></div><div id="title-main-content">
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="title-introduction">
+	<div class="title-h1">
+		<h1> Learn C Programming </h1><span> The Definitive Guide</span>
+	</div>
+	<div class="clearfix">
+					<div class="title-introduction-content">
+				<p>C is a powerful general-purpose programming language. It is fast, portable and available in all platforms.</p>
+
+<p>If you are new to programming, C is a good choice to start your programming journey.</p>
+
+<p>This is a comprehensive guide on how to get started in C programming language, why you should learn it and how you can learn it.</p>			</div>
+							<div class="page-title-toc">
+				<h2>Table of Contents</h2>
+				<ul>
+	<li><a href="#tutorial">C Tutorials</a></li>
+	<li><a href="#what-is-c">What is C Programming?</a></li>
+	<li><a href="#should-you-learn-c">Reasons to Learn C</a></li>
+	<li><a href="#first-c-program">Your First C Program</a></li>
+	<li><a href="#recommended-books">Recommended Books</a></li>
+	<li><a href="#learn-c-right-way">Things to Remember</a></li>
+</ul>
+			</div>
+			</div>
+	<div> 
+					<style>
+.programiz_title_page_atf { width: 300px; height: 250px; margin: 20px 0; }
+@media(min-width: 1200px) { .programiz_title_page_atf { margin: 25px 0; width: 728px; height: 90px; } }
+</style>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Programiz_Title_Page_ATF -->
+<ins class="adsbygoogle programiz_title_page_atf"
+     style="display: inline-block"
+     data-ad-client="ca-pub-9007421361448641"
+     data-ad-slot="1961745222"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>			</div>
+</div>
+
+<div class="title-section">
+			<article>
+			<h2 class="autoscroll" id="what-is-c"> What is C (Programming Language)? - The Basics </h2>
+			<p class="title-section-image"><img src="//cdn.programiz.com/sites/tutorial2program/files/info.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Introduction to C Programming"><p>
+				<div class="section-body"> <p>Before getting started with C programming, lets get familiarized with the language first.</p>
+<p>C is a general-purpose programming language used for wide range of applications from Operating systems like Windows and iOS to software that is used for creating 3D movies.</p>
+<p>C programming is highly efficient. That&rsquo;s the main reason why it&rsquo;s very popular despite being more than 40 years old.</p>
+<p>Standard C programs are portable. The source code written in one system works in another operating system without any change.</p>
+<p>As mentioned, it&rsquo;s a good language to start learning programming. If you know C programming, you will not just understand how your program works, but will also be able to create a mental picture on how a computer works.</p>
+<p><strong>More information on C Language.</strong></p>
+<section class="title-accordion">
+	<h3 class="autoscroll" id="history-of-c">History of C programming</h3>
+	<div>
+		<p>C is closely associated with Unix Operating system</p>
+		<h4>Development of Unix System</h4>
+		<p>The PDP-11 version of Unix system was written in assembly language. Assembly languages are low-level programming languages that are specific to a particular computer architecture. They are hard to write and understand.</p>
+		<p>The developers of Unix Operating system (including Dennis Ritchie and Stephen C. Johnson) decided to rewrite the system in B language. However, B couldn&rsquo;t suffice some of the features of PDP-11, which led to the development of C.</p>
+		<p>In 1972, the development of C started on the PDP-11 Unix system. A large part of Unix was then rewritten in C. By 1973, C was powerful enough to be used in Unix Kernel. Dennis Ritchie and Stephen C. Johnson made further changes to the language for several years to make it portable in Unix Operating system.</p>
+		<h4>First Book on C Programming</h4>
+		<p>In 1978, the first book of C programming, <a href="https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628" rel="nofollow" title="The C Programming Language Book">The C Programming Language</a>, was published. The first edition of the book provided programmers informal specification of the language. Written by Brian Kernighan and Dennis Ritchie, this book is popular among C programmers as &quot;K&amp;R&quot;.</p>
+		<h4>ANSI C</h4>
+		<p>With the rapid growth of C language for several years, it was time for language to get it standardized.</p>
+		<p><strong>C89.</strong> The first standard of C was published by American National Standards Institute (ANSI) in 1989. This version is commonly popular as C89.</p>
+		<p><strong>C99.</strong> In late 1990&rsquo;s, several new features like inline functions, several new data types and flexible array-members were added to the C standard. This is commonly known as C99.</p>
+		<p><strong>C11.</strong> The C11 standard has new features like type generic macros, atomic operations, anonymous structures that doesn&rsquo;t exist in C99.</p>
+		<p>All these three standards are also known by the name of ANSI C.</p>
+		<p><strong>&ldquo;Standard C programs are portable&rdquo;</strong>. This means, the programs that follow ANSI C standard are portable among operating systems.</p>
+		<p>If you are new to programming, it&rsquo;s advisable to follow the standard (ANSI C in case of C programming) that is accepted everywhere. It will help you learn the language the way it was intended.</p>
+	</div>
+</section>
+<section class="title-accordion">
+	<h3 class="autoscroll" id="features-of-c">Features of C Programming Language</h3>
+	<div>
+		<p><strong>A procedural language.</strong></p>
+		<p>In procedural languages like C, a list of predefined instructions are carried out step by step. A typical C program may contain one or more procedures (functions) to perform a task.</p>
+                <p> If you are new to programming, you might think this is the only way all programming languages work. However, there are other programming paradigms as well. One of the commonly used paradigms is Object-oriented programming (OOP) which allows developers to create objects to solve the given task. If you are interested, check out the <a href="http://stackoverflow.com/questions/552336/oop-vs-functional-programming-vs-procedural" title="Procedural Language Vs Object Oriented Language">differences between procedural and object oriented languages</a>.</p>
+		<p><strong>C programs are fast.</strong></p>
+		<p>Newer languages like Python and Java offer more features (garbage collection, dynamic typing) than C programming. However, the performance lowers due to additional processing.</p>
+		<p>C language trusts programmers and allows direct manipulation of the computer hardware. This is not possible in most high-level programming languages. It&rsquo;s one of the reasons why C is considered good choice to start learning programming.</p>
+		<p><strong>Standard C programs are portable.</strong></p>
+		<p>&ldquo;Write once, compile everywhere&rdquo;. Well-written standard C programs are portable, meaning, programs written in one system (e.g. Windows 7) can be compiled in another system(e.g. Mac OS) without any change.</p>
+		<p><strong>Use of Modularity.</strong></p>
+		<p>You can store sections of C code in the form of libraries for future use. This concept is known as modularity.</p>
+		<p>C itself can do very little on its own. The power of C language comes from its libraries. C comes with standard libraries to solve common problems. Suppose, you need to display something on the screen, you can include &ldquo;stdio.h&rdquo; library that allows you to use printf() function.</p>
+		<p><strong>Statically typed language.</strong></p>
+		<p>C is a statically typed language. This means that the type of a variable is checked during the compile time but not in the run-time. This helps in detection of errors during the software development cycle. Also, the statically typed languages are faster than dynamically typed language in general.</p>
+		<p><strong>General purpose.</strong></p>
+		<p>Despite being old, C is used in variety of applications from system programming to photo editing softwares. Some of the applications where C programming is used are as follows:</p>
+		<ul>
+			<li><strong>Embedded Systems</strong></li>
+			<li><strong>Operating System</strong> - Windows, Linux, OSX, Android, iOS</li>
+			<li><strong>Databases</strong> - PostgreSQL, Oracle, MySQL, MS SQL Server</li>
+			<li><strong>Other Uses</strong> - Network drivers, Compilers, Print spoolers</li>
+		</ul>
+	</div>
+</section> </div>
+			</article>
+				<article>
+			<h2 class="autoscroll" id="should-you-learn-c"> Should you learn C programming? </h2>
+			<p class="title-section-image"><img src="//cdn.programiz.com/sites/tutorial2program/files/learn-c-programming.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Why learn C programming?"><p>
+				<div class="section-body"> <p>If only it were possible to answer this question with a simple &ldquo;yes&rdquo; or &ldquo;no&rdquo;. Unfortunately, it&rsquo;s not an easy question to answer and varies from person to person.</p>
+
+<!-- /8095840/.2_A.34657.4_Programiz.com_tier1 -->
+<div id='div-gpt-ad-1527670353707-0'>
+<script>
+if (window.innerWidth <= 768) {
+          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527670353707-0'); });
+      }
+</script>
+</div>
+
+<!-- /8095840/.2_A.34660.4_Programiz.com_tier1 -->
+<div id='div-gpt-ad-1527670429257-0'>
+<script>
+if (window.innerWidth > 768) {
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527670429257-0'); });
+}
+</script>
+</div>
+
+<p>Personally speaking, I love C programming. It is a good language to start your programming journey if you are a newbie. Even if you are an experienced programmer, I recommend you to learn it at some point; it will certainly help.</p>
+
+<h3>What will you gain if you learn C?</h3>
+
+<p>If you don&rsquo;t know C, you don&rsquo;t know what you are doing as a programmer. Sure, your application works fine and all. But, if you can&rsquo;t say why while <code>(*s++ = *p++);</code> copies a string, you&rsquo;re programming on a superstition. (&nbsp;<a href="http://www.joelonsoftware.com/" title="Joel Spolsky, founder of Stack Overflow">Joel </a><a href="http://www.joelonsoftware.com/" title="Joel Spolsky, founder of Stack Overflow">Spolsky</a>&rsquo;s words, not mine ).</p>
+
+<ol>
+	<li><strong>You will understand how a computer works.</strong><br />
+		<br />
+		If you know C, you will not only know how your program works but, you will be able to create a mental model on how a computer works (including memory management and allocation). You will learn to appreciate the freedom that C provides unlike Python and Java.<br />
+		<br />
+		Understanding C allows you to write programs that you never thought were possible before (or at the very least, you will have a broader understanding of computer architecture and programming as a whole).</li>
+	<li><strong>C is the lingua franca of programming.</strong><br />
+		<br />
+		Almost all high-level programming languages like Java, Python, JavaScript etc. can interface with C programming. Also, it&rsquo;s a good language to express common ideas in programming. Doesn&rsquo;t matter if the person you are talking with doesn&rsquo;t know C, you can still convey your idea in a way they can understand.</li>
+	<li><strong>Opportunity to work on open source projects that impact millions of people.</strong><br />
+		<br />
+		At first, you may overlook the fact that C is an important language. If you need to develop a mobile app, you need Java (for Android), Swift and Objective C (for iOS). And there are dozens of languages like C#, PHP, ASP.net, Ruby, Python for building web application. Then, where is C programming?<br />
+		<br />
+		Python is used for making wide range for applications. And, C is used for making Python. If you want to contribute to Python, you need to know C programming to work on Python interpreter that impacts millions of Python programmers. This is just one example. A large number of softwares that you use today is powered by C.<br />
+		<br />
+		Some of the larger open source projects where C programming is used are Linux Kernel, Python Interpreter, SQLite Database.<br />
+		<br />
+		Another language that&rsquo;s commonly used for large open source project is C++. If you know C and C++, you can contribute to large open source projects that impacts hundreds of millions of people.</li>
+	<li><strong>You will write better programs.</strong><br />
+		<br />
+		To be honest, this statement may not be true all the time. However, knowing how computer works and manage memory gives you insight on how to write efficient code in other programming languages.</li>
+	<li><strong>You will find it much easier to learn other programming languages.</strong><br />
+		<br />
+		A lot of popular programming languages are based on C (and C++, considered superset of C programming with OOP features). If you know C, you will get a head start learning C++.<br />
+		<br />
+		Languages like C# and Java are related to C and C++. Also, the syntax of JavaScript and PHP is similar to C.<br />
+		<br />
+		If you know C and C++ programming, you will not have any problem switching to another language.</li>
+</ol>
+
+<h3>Reasons not to learn C programming</h3>
+
+<p>You can create awesome softwares without knowing C programming at all. Jeff Atwood, one of the creators of Stackoverflow.com, apparently doesn&rsquo;t know C and Stack Overflow is a really good web application.</p>
+
+<p>If you are busy and don&rsquo;t want to invest time on something that doesn&rsquo;t have direct effect on your day-to-day work, C programming is not for you.</p>
+
+<p>Also, if you are a newbie and want to start learning programming with an easier language (C is not the easiest of language to learn), you can start with Python.</p>
+
+<h3>Verdict on whether to learn C programming or not</h3>
+
+<p><strong>For newbie:</strong></p>
+
+<p>For many, C programming is the best language to start learning programming. However, if you want to start with an easier language which is clean and easier to grasp, go for Python.</p>
+
+<p><strong>For experienced programmers:</strong></p>
+
+<p>It&rsquo;s not absolutely essential but there are perks of learning C programming.</p>
+
+<p>Don&rsquo;t leave your current project immediately (I know you won&rsquo;t) to learn C. You can learn it when you have free time and want to expand your programming skills.</p>
+
+<p>I believe, it&rsquo;s not necessary to learn C immediately. However, you should learn C eventually.</p>
+ </div>
+			</article>
+				<article>
+			<h2 class="autoscroll" id="compile-run-c"> Compile and run C programming on your OS </h2>
+			<p class="title-section-image"><img src="//cdn.programiz.com/sites/tutorial2program/files/Run%20C%20on%20your%20system.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Run C on your system"><p>
+				<div class="section-body"> <p>There are numerous compilers and text editors you can use to run C programming. These compilers and text editors may differ from system to system.</p>
+
+<p>You will find the easiest way to run C programming on your computer (Windows, Mac OS X or Linux) in this section.</p>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="run-c-online">Run C program Online</h3>
+
+	<div>
+		<p>There are several sites that allows you to run C programming online. The one I prefer is <a href="http://ideone.com">ideone.com</a>.</p>
+
+		<p>To run C programming in Ideone.com, select C language at the bottom of the editor, write C code and click Run.</p>
+
+		<p>It should be noted that, online C compilers are limited (you can&rsquo;t work with files, taking input from the user is not natural and so on).</p>
+	</div>
+</section>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="run-c-macos">Run C Programming in Mac OS X</h3>
+
+	<div>
+		<ol>
+			<li>Go to download page of <a href="https://developer.apple.com/download/" title="Apple Developer">apple developer site</a>.<br />
+				<img alt="Download X Code from Apple developer site" src="//cdn.programiz.com/sites/tutorial2program/files/download-xcode.png" title="Download Xcode" /></li>
+			<li>Click the download Xcode link. It&rsquo;s recommended to download the latest version even if it&rsquo;s in beta.</li>
+			<li>When download is completed, open Xcode and follow the wizard to install it. You might want to put the Xcode in <strong>Applications</strong> for future use.</li>
+			<li>Then, open Xcode and go to <strong>File &gt; New &gt; Project</strong>.<br />
+				<img alt="Navigate to project" src="//cdn.programiz.com/sites/tutorial2program/files/navigate-project.png" /></li>
+			<li>Under OS X section, choose <strong>Application</strong>, choose <strong>Command Line Tool</strong> and hit next.<br />
+				<img alt="Command line tool under OSX application" src="//cdn.programiz.com/sites/tutorial2program/files/command-line-tool.png" /></li>
+			<li>Provide the <strong>Product Name</strong>, for example: Hello. And, choose <strong>C</strong> under <strong>Language</strong> section. Then, click next.</li>
+			<li>Choose the location where you want to save the project in your Mac. You can uncheck <strong>Create Git repository</strong> button and click create.</li>
+			<li>Navigate to <strong>main.c</strong> file in the screen where you can see default code provided by XCode.<br />
+				<img alt="main.c file in Xcode" src="//cdn.programiz.com/sites/tutorial2program/files/main.c-macosx.png" /></li>
+			<li>Change the code as you wish. And finally to run the code, go to <strong>Product &gt; Run</strong> or simply hit <strong>Cmd + R</strong>.</li>
+			<li>By default you will see the output at the bottom of your screen.</li>
+		</ol>
+	</div>
+</section>
+
+<section class="title-accordion">
+	<h3 class="autoscroll" id="run-c-linux">Run C programming on Linux</h3>
+
+	<div>
+		<p>To run C programming on Linux, you need:</p>
+
+		<ul>
+			<li>a compiler. We&rsquo;ll install GNU GCC compiler which is good for beginners.</li>
+			<li>development tools and libraries.</li>
+			<li>a text editor (gEdit works just fine for our purpose). Or, you can download text editor of your choice.</li>
+		</ul>
+
+		<p>Here&rsquo;s a step by step guide to run C in Linux (Ubuntu, Debian, CentOS, Fedora, Red Hat and Scientific Linux):</p>
+
+		<ol>
+			<li>Open the terminal and issue the following command.<br />
+				<strong>For Ubuntu and Debian distribution:</strong>
+
+				<pre>
+$ sudo apt-get update
+$ sudo apt-get install build-essential manpages-dev</pre>
+				<strong>For CentOS, Fedora, Red Hat and Scientific Linux:</strong>
+
+				<pre>
+# yum groupinstall &#39;Development Tools&#39;
+</pre>
+				This installs GNU GCC compiler and related tools on your system.</li>
+			<li>To verify if gcc compiler is installed, issue the command.
+				<pre>
+$ gcc --version</pre>
+				If you get output similar like this, gcc is correctly installed on your system.<br />
+				<img alt="Check gcc version in linux" src="//cdn.programiz.com/sites/tutorial2program/files/gcc-version.png" /></li>
+			<li>Open the text editor of your choice and save a file with <strong>.c extension</strong>. I made hello.c file using gEdit.<br />
+				<img alt="C code in gEdit text editor" src="//cdn.programiz.com/sites/tutorial2program/files/gEdit-cfile.png" /><br />
+				If you are a Linux wizard, feel free to use vim or emacs. Any editor is fine but, don&rsquo;t forget to use .c extension; it&rsquo;s important.</li>
+			<li>Switch to the directory where the file is located. And, issue the following command.
+				<pre>
+$ gcc program-source-code.c -o  name-of-your-choice</pre>
+				Here, <strong>program-source.code.c</strong> is the filename you chose before. And, <strong>name-of-your-choice</strong> can be any name you prefer. In my case, I issued the following command. $ gcc hello.c -o hello</li>
+			<li>If there is no error, an executable file named is created; <strong>hello</strong> is my case.</li>
+			<li>Finally, you can see the output using following command.
+				<pre>
+$ ./hello
+</pre>
+				<img alt="C code output in linux using terminal" src="//cdn.programiz.com/sites/tutorial2program/files/c-code-output-linux.png" /> As you might have imagined, you need to use the name of executable file you chose before. Also, you need to use path to the execute file if you are in a different directory.</li>
+		</ol>
+	</div>
+</section>
+
+<section class="title-accordion-open">
+	<h3 class="autoscroll" id="run-c-windows">Run C Programming in Windows (XP, 7, 8 and 10)</h3>
+
+	<div>
+		<p>To run C Programming in Windows, download a software called Code::Blocks. Then, write C code, save the file with .c extension and execute the code.</p>
+
+		<p>To make this procedure even easier, follow this step by step guide.</p>
+
+		<ol>
+			<li>Go to the <a href="http://www.codeblocks.org/downloads/26" title="Download Code:Blocks">binary release download page of Code:Blocks</a> official site.</li>
+			<li>Under <strong>Windows XP / Vista / 7 / 8.x / 10</strong> section, click the link with <strong>mingw-setup</strong> (highlighted row) either from Sourceforge.net or FossHub.<br />
+				<img alt="Download Code::Blocks in Windows" src="//cdn.programiz.com/sites/tutorial2program/files/download-codeblocks-windows.png" /></li>
+			<li>Open the Code::Blocks Setup file and follow the instructions (<strong>Next &gt; I agree &gt; Next &gt; Install</strong>); you don&rsquo;t need to change anything. This installs the Code::Blocks with gnu gcc compiler, which is the best compiler to start with for beginners.</li>
+			<li>Now, open Code::Blocks and go to <strong>File &gt; New &gt; Empty file</strong> (Shortcut: <strong>Ctrl + Shift + N</strong>)<br />
+				<img alt="Create empty file in Codeblocks" src="//cdn.programiz.com/sites/tutorial2program/files/create-new-file-codeblocks.png" /></li>
+			<li>Write the C code and save the file with <strong>.c</strong> extension. To save the file, go to <strong>File &gt; Save</strong> (Shortcut: <strong>Ctrl + S</strong>).<br />
+				<strong>Important:</strong> The filename should end with a <strong>.c</strong> extension, like: hello.c, your-program-name.c<br />
+				<img alt="Create file with .c extension in Codeblocks to run C programming" src="//cdn.programiz.com/sites/tutorial2program/files/create-c-file.jpg" /></li>
+			<li>To run the program, go to <strong>Build &gt; Build and Run</strong> (Shortcut: <strong>F9</strong>). This will build the executable file and run it.</li>
+		</ol>
+
+		<p>If your program doesn&rsquo;t run and if you see error message &quot;can&#39;t find compiler executable in your search path(GNU GCC compiler)&quot;, go to <strong>Settings &gt; Compiler &gt; Toolchain executables</strong> and click <strong>Auto-detect</strong>. This should solve the issue in most cases.</p>
+	</div>
+</section>
+ </div>
+			</article>
+				<article>
+			<h2 class="autoscroll" id="first-c-program"> The fun begins: Your first C program  </h2>
+			<p class="title-section-image"><img src="//cdn.programiz.com/sites/tutorial2program/files/first-c-program.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/First C Program, Hello World!"><p>
+				<div class="section-body"> <p>You will learn to write a &ldquo;Hello, World!&rdquo; program in this section.</p>
+
+<h3>Why &ldquo;Hello, World!&rdquo; program?</h3>
+
+<p>&ldquo;Hello, World!&rdquo; is a simple program that displays &ldquo;Hello, World!&rdquo; on the screen. Since, it&rsquo;s a very simple program, it is used to illustrate the basic syntax of any programming language.</p>
+
+<style>
+.programiz_title_page_last { width: 300px; height: 250px; margin: 15px 0; }
+@media(min-width: 1200px) { .programiz_title_page_last { width: 336px; height: 250px; } }
+</style>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Programiz_Title_Page_ATF -->
+<ins class="adsbygoogle programiz_title_page_last"
+     style="display: inline-block"
+     data-ad-client="ca-pub-9007421361448641"
+     data-ad-slot="9647655230"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<p>This program is often used to introduce programming language to a beginner. So, let&rsquo;s get started.</p>
+
+<pre>
+<code>#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello, World!\n&quot;);
+    return 0;
+}</code></pre>
+
+<h3>How &ldquo;Hello, World!&rdquo; program works?</h3>
+
+<p><strong>Include stdio.h header file in your program.</strong></p>
+
+<p>C programming is small and cannot do much by itself. You need to use libraries that are necessary to run the program. The <code>stdio.h</code> is a header file and C compiler knows the location of that file. To use the file, you need to include it in your program using <code>#include</code> preprocessor.</p>
+
+<p><strong>Why do you need stdio.h file in this program?</strong></p>
+
+<p>In this program, we have used <code>printf()</code> function which displays the text inside the quotation mark. Since <code>printf()</code> is defined in <code>stdio.h</code>, you need to include <code>stdio.h</code>.</p>
+
+<p><strong>The main() function</strong></p>
+
+<p>In C programming, the code execution begins from the start of main() function (doesn&rsquo;t matter if <code>main()</code> isn&rsquo;t located at the beginning).</p>
+
+<p>The code inside the curly braces { } is the body of <code>main()</code> function. The <code>main()</code> function is mandatory in every C program.</p>
+
+<pre>
+int main() {
+}</pre>
+
+<p>This program doesn&rsquo;t do anything but, it&rsquo;s a valid C program.</p>
+
+<p><strong>The printf() function</strong></p>
+
+<p>The <code>printf()</code> is a library function that sends formatted output to the screen (displays the string inside the quotation mark). Notice the semicolon at the end of the statement.</p>
+
+<p>In our program, it displays <var>Hello, World!</var> on the screen.</p>
+
+<p>Remember, you need to include <code>stdio.h</code> file in your program for this to work.</p>
+
+<p><strong>The return statement</strong></p>
+
+<p>The return statement <code>return 0;</code> inside the <code>main()</code> function ends the program. This statement isn&rsquo;t mandatory. However, it&rsquo;s considered good programming practice to use it.</p>
+
+<h3>Key notes to take away</h3>
+
+<ul>
+	<li>All C program starts from the <code>main()</code> function and it&rsquo;s mandatory.</li>
+	<li>You can use the required header file that&rsquo;s necessary in the program. For example: To use <code>sqrt()</code> function to calculate square root and <code>pow()</code> function to find power of a number, you need to include <code>math.h</code> header file in your program.</li>
+	<li>C is case-sensitive; the use of uppercase letter and lowercase letter have different meanings.</li>
+	<li>The C program ends when the program encounters the return statement inside the <code>main()</code> function. However, return statement inside the main function is not mandatory.</li>
+	<li>The statement in a C program ends with a semicolon.</li>
+</ul>
+ </div>
+			</article>
+				<article>
+			<h2 class="autoscroll" id="teach-code"> Teach Yourself to Code in C </h2>
+			<p class="title-section-image"><img src="//cdn.programiz.com/sites/tutorial2program/files/how-learn-c.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Learn C programming"><p>
+				<div class="section-body"> <h3 class="autoscroll" id="learn-c-programiz">Learn C from Programiz</h3>
+
+<p>Programiz offers <a href="#learn-c-tutorial">dozens of tutorials and examples</a> to help you learn C programming from scratch.</p>
+
+<p>The tutorials are designed for beginners who do not have any prior knowledge of C programming (or, any other programming languages). Each tutorial is written in depth with examples and detailed explanation.</p>
+
+<h3 class="autoscroll" id="recommended-books">Recommended Books in C Programming</h3>
+
+<p>If you are serious about learning programming (any programming language including C), you should get yourself a good book.&nbsp;</p>
+
+<p>Granted, reading a 600 page long programming book takes a lot of time and patience. But, you will get the big picture of programming concepts in the book which you may not find elsewhere.</p>
+
+<p>Here are 3 books we personally recommend.</p>
+
+<div class="clearfix  title-recommended-books">
+	<div class="book-content">
+		<h4>The C Programming Language (2nd Edition)</h4>
+
+		<p>This book provides the complete guide to ANSI standard C language.</p>
+
+		<p>Most importantly, it&rsquo;s co-written by Dennis M. Ritchie, creator of C programming language.</p>
+	</div>
+
+	<div class="book-image">
+		<p><img alt="The C programming Language Book" src="//cdn.programiz.com/sites/tutorial2program/files/the-c-programming-language.jpg" style="width: 155px; height: 203px;" title="The C programming Language" /></p>
+		<a class="button" href="http://amzn.to/2diIiT6" rel="nofollow">Get this book</a> <a class="button" href="http://amzn.to/2FZYIhJ" rel="nofollow" style="margin-top:5px">Get book (India) </a></div>
+</div>
+
+<div class="clearfix  title-recommended-books">
+	<div class="book-content">
+		<h4>C Programming: A Modern Approach (2nd Edition)</h4>
+
+		<p>Personally I believe, this is the best book for beginners.</p>
+
+		<p>This book is clear and comprehensive. Also, the Q&amp;A section at the end of each chapter makes this book a must have for beginners.&nbsp;</p>
+	</div>
+
+	<div class="book-image">
+		<p><img alt="C Programming: A Modern Approach Book" src="//cdn.programiz.com/sites/tutorial2program/files/c-programming-a-modern-approach.jpg" style="width: 155px; height: 190px;" title="C Programming: A Modern Approach" /></p>
+		<a class="button" href="http://amzn.to/2e6e0FD" rel="nofollow">Get this book</a> <a class="button" href="http://amzn.to/2EqAaBI" rel="nofollow" style="margin-top:5px">Get book (India) </a></div>
+</div>
+
+<div class="clearfix title-recommended-books">
+	<div class="book-content">
+		<h4>C Pocket Reference (1st Edition)</h4>
+
+		<p>Don&rsquo;t want to search pages and pages to look for a small information? Get this book.</p>
+
+		<p>As suggested by the name, it&rsquo;s a small book for reference.</p>
+	</div>
+
+	<div class="book-image">
+		<p><img alt="C Pocket Reference Book" src="//cdn.programiz.com/sites/tutorial2program/files/c-pocket-reference.jpg" style="width: 155px; height: 253px;" title="C Pocket Reference" /></p>
+		<a class="button" href="http://amzn.to/2dVe0fs" rel="nofollow">Get this book</a> <a class="button" href="http://amzn.to/2ERpNEQ" rel="nofollow" style="margin-top:5px">Get book (India) </a></div>
+</div>
+ </div>
+			</article>
+				<article>
+			<h2 class="autoscroll" id="learn-c-right-way"> Learn C programming, the right way </h2>
+			<p class="title-section-image"><img src="//cdn.programiz.com/sites/tutorial2program/files/c-learn-right-way_0.png" alt="https://www.programiz.com/" title="//cdn.programiz.com/Learn C in right way"><p>
+				<div class="section-body"> <p><strong>Fact:</strong>&nbsp;You cannot learn C programming in a day. You might have difficulty grasping the important concepts if you try to learn C programming faster. &nbsp;</p>
+
+<p>If you just learn the syntax and dive in, your C code may work but you&rsquo;ll not end up learning C programming the right way., &nbsp;</p>
+
+<h4>Don&rsquo;t just look at the example code, run it in your system</h4>
+
+<p>Programiz has dozens of <a href="/c-programming/examples" title="C programming examples">examples</a> that will help you understand C programming. However, if you are reading it like a novel without running it in your system, you are doing it wrong.</p>
+
+<p>If you want to learn a new feature of C programming, try to write code related to that feature. If you can&rsquo;t, copy code from Programiz and run it in your system. Then, try to understand it. Once you understand it, modify the code, make it different and run it again.</p>
+
+<h4>Learn to use a Debugging tool</h4>
+
+<p>A debugging tool or debugger is a software (that&rsquo;s already available in IDE) which allows programmers to stop a program at any point and helps to detect and correct errors.</p>
+
+<p>When you have bugs in your program, rather than scratching your head to find the bug, you can use debugger to stop program at any point and find the value of variables to detect the bug.&nbsp;</p>
+
+<p>Knowing how to use a debugger is an important skill that every programmer should learn.&nbsp;</p>
+
+<h4>Learn the feature the way it is intended&nbsp;</h4>
+
+<p><strong>Imagine a situation:</strong> It&rsquo;s possible to solve a problem with an array. Also, you can solve the same problem with a structure. Technically both are correct, which method will you use?</p>
+
+<p>To answer this question, you should have a good knowledge of when to use an array and when to use a structure.</p>
+
+<p>Suppose, you are switching to C from a different language, let&rsquo;s say C#. You do not want to write C# style code with C syntax in your C program.</p>
+
+<h4>Join C communities</h4>
+
+<p>Once you get the hang of writing simple C programs, join online communities and forums. You can help other programmers where you can and ask for help when you are stuck.&nbsp;</p>
+
+<p>Communities Programiz recommends you to join:</p>
+
+<ul>
+	<li><a href="https://groups.google.com/forum/#!forum/cs50-discuss">Private Google forum for C Programmers</a> - It&rsquo;s a gem for C programming beginners.</li>
+	<li><a href="https://www.codechef.com/c-programming">Codechef</a> - Practice questions, challenges and a large community of programmers</li>
+	<li><a href="http://stackoverflow.com/questions/tagged/c?sort=frequent&amp;pageSize=15">StackOverflow</a> - Most Popular programming Q&amp;A site on the web</li>
+</ul>
+
+<h3>Always follow good programming practice &nbsp; &nbsp;&nbsp;</h3>
+
+<p>Good programming practice are the informal rules which can improve quality and decrease development time of the software.</p>
+
+<p>Some of the programming practices mentioned here are valid in all programming languages whereas some are valid only for C programming.&nbsp;</p>
+
+<p><strong>Be consistent with the formatting.&nbsp;</strong></p>
+
+<p>The number of spaces you use in the program doesn&rsquo;t matter in C. However, that doesn&rsquo;t mean you should use different number of spaces at different places. Also, use proper indentation so that the code is easier to understand.&nbsp;</p>
+
+<p><strong>Use one statement per line.</strong></p>
+
+<p>What&rsquo;s wrong with the following code?</p>
+
+<pre>
+int count; float squareRoot = 10.0; printf(&ldquo;Square root = %f&rdquo;, squareRoot);</pre>
+
+<p>Actually, the code is perfectly valid. But, wouldn&rsquo;t this be better:</p>
+
+<pre>
+<code>int count;
+float squareRoot = 10.0;
+printf(&ldquo;Square root = %f&rdquo;, squareRoot);</code></pre>
+
+<p>The goal here is to write code that your fellow programmers can understand.</p>
+
+<p><strong>Naming convention and Consistency!</strong></p>
+
+<p>Give a proper name to variables and functions and be consistent with it.&nbsp;</p>
+
+<pre>
+int a, b;</pre>
+
+<p>Here, <var>a</var> and <var>b</var> are two variables and I have no idea what they do. Instead you can choose name like:</p>
+
+<pre>
+int counter, power; </pre>
+
+<p>Also, follow a convention while naming. For example:</p>
+
+<pre>
+int base_number, powerNumber;</pre>
+
+<p>Both conventions: using _ to separate words and using capital letter after first word is popular. However, don&rsquo;t use both in one program; choose one and be consistent with it.</p>
+
+<p><strong>Start Habit of Using Comments </strong></p>
+
+<p>Comments are part of code that compiler ignores.</p>
+
+<p>You can use comments in your program to explain what you are trying to achieve in your program. This helps your fellow programmer to understand the code.</p>
+
+<p>You can use comments in C programming by using //. For example:</p>
+
+<pre>
+<code>// My first C program
+
+#include &lt;stdio.h&gt;
+int main()
+{
+    printf(&quot;Hello, World!\n&quot;);   // displays Hello, World! on the screen
+    return 0;
+}</code></pre>
+
+<blockquote>
+	<p>&ldquo;Commenting your code is like cleaning your bathroom - you never want to do it, but it really does create a more pleasant experience for you and your guests.&rdquo;&nbsp;<br />
+		<br />
+		&mdash; Ryan Campbell</p>
+</blockquote>
+ </div>
+			</article>
+			</div>
+	<div class="title-conclusion">
+		<p>We at Programiz think C is a terrific language to learn.</p>
+
+<p>If you are a beginner, it&rsquo;s a good language to start learning programming. And, if you are a professional programmer with a tight schedule, learn it at your leisure; it will certainly help your brush up on programming basics.</p>
+	</div>
+
+	<section class="title-link-section clearfix">
+			<h2 class="autoscroll" id="tutorial">C Tutorial</h2>
+<hr>
+<div class="clearfix">
+<section>
+	<h3>Introduction</h3>
+	<ul>
+		<li><a href="/c-programming/c-keywords-identifier" title="Keywords and Variables">Keywords &amp; Identifier</a></li>
+		<li><a href="/c-programming/c-variables-constants" title="Variables, constants and how to name a variable">Variables &amp; Constants</a></li>
+		<li><a href="/c-programming/c-data-types" title="Data types like Integer, Float, Characters in C">C Data Types</a></li>
+		<li><a href="/c-programming/c-input-output" title="Input/Output using prinf() and scanf()">C Input/Output</a></li>
+		<li><a href="/c-programming/c-operators" title="Operators in C">C Operators</a></li>
+		<li><a href="/c-programming/c-introduction-examples" title="C Introduction Examples">Basic Examples</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Flow Control</h3>
+	<ul>
+		<li><a href="/c-programming/c-if-else-statement" title="Decision making in C using if, if...else and nested if...else">if...else Statement</a></li>
+		<li><a href="/c-programming/c-for-loop" title="for Loop in C">C for Loop</a></li>
+		<li><a href="/c-programming/c-do-while-loops" title="while and do...while loop">C while Loop</a></li>
+		<li><a href="/c-programming/c-break-continue-statement" title="break and continue">break and continue</a></li>
+		<li><a href="/c-programming/c-switch-case-statement" title="Decision making using switch">switch Statement</a></li>
+		<li><a href="/c-programming/c-decision-making-loops-examples" title="Loops and decision making examples">Decision Examples</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Functions</h3>
+	<ul>
+		<li><a href="/c-programming/c-functions" title="Functions in C programming">Functions Introduction</a></li>
+		<li><a href="/c-programming/c-user-defined-functions" title="How to create user-defined functions?">User-defined Function</a></li>
+		<li><a href="/c-programming/types-user-defined-functions" title="Different ways to pass variable and return value from a function">Function Types</a></li>
+		<li><a href="/c-programming/c-recursion" title="C recursive function">Recursion in C</a></li>
+		<li><a href="/c-programming/c-storage-class" title="Storage class and scope of a variable">Variable Scope</a></li>
+		<li><a href="/c-programming/c-functions-examples" title="Function Examples">Function Examples</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Arrays</h3>
+	<ul>
+		<li><a href="/c-programming/c-arrays" title="Arrays in C programming">C Arrays Introduction</a></li>
+		<li><a href="/c-programming/c-multi-dimensional-arrays" title="C Multidimensional arrays">Multidimensional Array</a></li>
+		<li><a href="/c-programming/c-arrays-functions" title="Pass array to Function">Arrays &amp; Functions</a></li>
+		<li><a href="/c-programming/c-strings" title="Strings in C programming">Strings in C</a></li>
+		<li><a href="/c-programming/string-handling-functions" title="Commonly used string functions">String Functions</a></li>
+		<li><a href="/c-programming/c-string-examples" title="Array Examples">Array Examples</a></li>
+	</ul>
+</section>
+<section>
+	<h3>C Pointers</h3>
+	<ul>
+		<li><a href="/c-programming/c-pointers" title="Pointer Variable">C Pointers</a></li>
+		<li><a href="/c-programming/c-pointers-arrays" title="Pointers and Arrays">Pointers &amp; Arrays</a></li>
+		<li><a href="/c-programming/c-pointer-functions" title="Pass pointer to a function">Pointers &amp; Functions</a></li>
+		<li><a href="/c-programming/c-dynamic-memory-allocation" title="Dynamic memory allocation in C">Memory Management</a></li>
+		<li><a href="/c-programming/c-pointer-examples" title="Pointer Examples">Pointer Examples</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Structure &amp; File</h3>
+	<ul>
+		<li><a href="/c-programming/c-structures" title="Structures in C programming">C Structure</a></li>
+		<li><a href="/c-programming/c-structures-pointers" title="Structures &amp; Pointers">Structure &amp; Pointers</a></li>
+		<li><a href="/c-programming/c-structure-function" title="Pass Structure to a function">Structure &amp; Functions</a></li>
+		<li><a href="/c-programming/c-unions" title="Unions in C programming">C Unions</a></li>
+		<li><a href="/c-programming/c-structure-examples" title="Structures in C Programming">Structure Examples</a></li>
+		<li><a href="/c-programming/c-file-input-output" title="File Handling in C">Files Handling</a></li>
+	</ul>
+</section>
+<section>
+	<h3>Additional Resources</h3>
+	<ul>
+		<li><a href="/c-programming/examples" title="C Programming Examples">C Examples</a></li>
+		<li><a href="/c-programming/library-function" title="Standard Library Functions">C Library Function</a></li>
+	</ul>
+</section>
+</div>
+
+<p class="autoscroll" id="tutorial">Get latest updates, articles and tutorials on C programming.</p>
+<div class="in-page-form clearfix">
+	<div class="ml-subscribe-form ml-subscribe-form-1805321" id="mlb2-1805321">
+		<div class="ml-vertical-align-center">
+			<div class="subscribe-form ml-block-success" style="display:none">
+				<div class="form-section">
+					<p>You have successfully subscribed to our C programming newsletter.</p>
+				</div>
+			</div>
+			<form action="//app.mailerlite.com/webforms/submit/k8c3w0" class="ml-block-form" data-code="k8c3w0" data-id="81301" method="POST" target="_blank">
+				<div class="subscribe-form">
+					<div class="form-section">
+						<div class="form-group ml-field-email ml-validate-required ml-validate-email"><input name="fields[email]" placeholder="Enter Your Email" type="text" value="" /><input name="ml-submit" type="hidden" value="1" />
+						</div>
+					</div>
+					<input name="ml-submit" type="hidden" value="1" /><button class="primary" type="submit">Subscribe</button><button class="loading" disabled="disabled" style="display: none;" type="button"><img height="20" src="//static.mailerlite.com/images/rolling.gif" style="width: 20px; height: 20px;" width="20" /></button>
+				</div>
+			</form>
+			<script>
+				function ml_webform_success_1805321() {
+					jQuery('.ml-subscribe-form-1805321 .ml-block-success').show();
+					jQuery('.ml-subscribe-form-1805321 .ml-block-form').hide();
+				};
+			</script>
+		</div>
+	</div>
+	<script type="text/javascript" src="//static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
+</div>		
+</section>  </div>
+</div>
+  </div>
+</div>
+</section>
+<footer id="footer">
+<div class="clearfix footer-wrapper">
+<div class="footer-left">
+  <div class="region region-footer-left">
+    <div id="block-block-86" class="block block-block">
+
+    
+  <div class="content">
+    <div class="footer-logo">
+	<div><a href="/" title="DataMentor Logo"><img alt="" src="//cdn.programiz.com/sites/all/themes/Ultimate/img/programiz-logo.png" width="60" /></a></div>
+
+	<div class="subscribe ml-subscribe-form ml-subscribe-form-5357625" id="mlb2-5357625">
+		<p>Get Latest Updates on Programiz</p>
+
+		<div class="ml-vertical-align-center">
+			<div class="subscribe-form ml-block-success" style="display:none">
+				<div class="form-section">
+					<p>You have successfully subscribed to our newsletter.</p>
+				</div>
+			</div>
+
+			<form action="//app.mailerlite.com/webforms/submit/z7v3o3" class="ml-block-form" data-code="z7v3o3" method="POST" target="_blank"><input name="fields[email]" placeholder="Enter Your Email" type="text" value="" /> <input name="ml-submit" type="hidden" value="1" /><button class="primary" type="submit">Subscribe</button><button class="loading" disabled="disabled" style="display: none;" type="submit"><img height="20" src="//static.mailerlite.com/images/rolling.gif" style="width: 20px; height: 20px;" width="20" /></button></form>
+			<script>
+				function ml_webform_success_1805321() {
+					jQuery('.ml-subscribe-form-1805321 .ml-block-success').show();
+					jQuery('.ml-subscribe-form-1805321 .ml-block-form').hide();
+				};
+			</script></div>
+	</div>
+	<script type="text/javascript" src="//static.mailerlite.com/js/w/webforms.js?v25"></script></div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="footer-right">
+  <div class="region region-footer-right">
+    <div id="block-block-87" class="block block-block">
+
+    
+  <div class="content">
+    <div class="footer-links"><span>tutorials</span>
+	<ul>
+		<li><a href="/python-programming" title="Python">Python Tutorials</a></li>
+		<li><a href="/c-programming" title="C Programming">C Tutorials</a></li>
+		<li><a href="/java-programming" title="Java">Java Tutorials</a></li>
+		<li><a href="/kotlin-programming" title="Kotlin">Kotlin Tutorials</a></li>
+		<li><a href="/cpp-programming" title="C++">C++ Tutorials</a></li>
+		<li><a href="/swift-programming" title="Swift">Swift Tutorials</a></li>
+		<li><a href="/r-programming" title="R Programming">R Tutorials</a></li>
+		<li><a href="/dsa" title="Data Structures and Algorithms">Algorithms Tutorials</a></li>
+	</ul>
+</div>
+
+<div class="footer-links"><span>examples</span>
+
+	<ul>
+		<li><a href="/python-programming/examples" title="Python">Python Examples</a></li>
+		<li><a href="/c-programming/examples" title="C Programming">C Examples</a></li>
+		<li><a href="/java-programming/examples" title="Java">Java Examples</a></li>
+		<li><a href="/kotlin-programming/examples" title="Kotlin">Kotlin Examples</a></li>
+		<li><a href="/cpp-programming/examples" title="C++">C++ Examples</a></li>
+		<li><a href="/r-programming/examples" title="R Programming">R Examples</a></li>
+	</ul>
+</div>
+
+<div class="footer-links"><span>company</span>
+
+	<ul>
+		<li><a href="/about-us">About</a></li>
+		<li><a href="/advertise">Advertising</a></li>
+		<li><a href="/contact">Contact</a></li>
+	</ul>
+</div>
+
+<div class="footer-links"><span>legal</span>
+
+	<ul>
+		<li><a href="/privacy-policy">Privacy Policy</a></li>
+		<li><a href="/terms-of-use">Terms and Conditions</a></li>
+	</ul>
+</div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+<div class="copyright">
+Copyright © by Programiz. All rights reserved.</a>
+</div>
+</footer>
+  <script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_wMq06n34El81cPtKvKVuAehyOEwepE71d1W2gGcEjDE.js"></script>
+<script type="text/javascript" src="//cdn.programiz.com/sites/tutorial2program/files/js/js_ZPMVUwauT3CzfUSIYk-Kc3nwhp80i90VcKjYuHm5owQ.js"></script>
+</body>
+</html>

@@ -1,0 +1,1537 @@
+08:22:46 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+08:26:41 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+08:27:00 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+make: Nothing to be done for 'all'.
+08:28:16 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+08:38:58 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+threads-demo.cpp: In function ‘int main(int, char**)’:
+threads-demo.cpp:476:2: error: expected ‘;’ before ‘parts’
+  parts = new insert_sort*[threadcount];
+  ^~~~~
+threads-demo.cpp:482:52: error: no match for call to ‘(insert_sort) (int, int, int, int*&, bool)’
+ singler(-1,0,my_length-1,arrtosinglesort,!DIRECTION);
+                                                    ^
+threads-demo.cpp:489:13: error: redeclaration of ‘pthread_t* threads’
+ pthread_t * threads = new pthread_t[threadcount];
+             ^~~~~~~
+threads-demo.cpp:438:13: note: ‘pthread_t* threads’ previously declared here
+ pthread_t * threads = new pthread_t[threadcount];
+             ^~~~~~~
+make: *** [threads-demo] Error 1
+Makefile:6: recipe for target 'threads-demo' failed
+08:39:10 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+threads-demo.cpp: In function ‘int main(int, char**)’:
+threads-demo.cpp:476:2: error: expected ‘;’ before ‘parts’
+  parts = new insert_sort*[threadcount];
+  ^~~~~
+threads-demo.cpp:482:52: error: no match for call to ‘(insert_sort) (int, int, int, int*&, bool)’
+ singler(-1,0,my_length-1,arrtosinglesort,!DIRECTION);
+                                                    ^
+Makefile:6: recipe for target 'threads-demo' failed
+make: *** [threads-demo] Error 1
+08:39:59 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+threads-demo.cpp: In function ‘int main(int, char**)’:
+threads-demo.cpp:482:52: error: no match for call to ‘(insert_sort) (int, int, int, int*&, bool)’
+ singler(-1,0,my_length-1,arrtosinglesort,!DIRECTION);
+                                                    ^
+Makefile:6: recipe for target 'threads-demo' failed
+make: *** [threads-demo] Error 1
+08:41:58 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+08:48:50 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+threads-demo.cpp: In function ‘int* MultiMerge(insert_sort**, int)’:
+threads-demo.cpp:248:42: error: ‘starts’ was not declared in this scope
+         printf("TEST:\t%d\t%d\t%d\t%d\n",starts[0],ends[i] ,starts[i+1],ends[i+1]);
+                                          ^~~~~~
+threads-demo.cpp:248:42: note: suggested alternative: ‘strtoq’
+         printf("TEST:\t%d\t%d\t%d\t%d\n",starts[0],ends[i] ,starts[i+1],ends[i+1]);
+                                          ^~~~~~
+                                          strtoq
+threads-demo.cpp:248:52: error: ‘ends’ was not declared in this scope
+         printf("TEST:\t%d\t%d\t%d\t%d\n",starts[0],ends[i] ,starts[i+1],ends[i+1]);
+                                                    ^~~~
+threads-demo.cpp:248:52: note: suggested alternative: ‘enum’
+         printf("TEST:\t%d\t%d\t%d\t%d\n",starts[0],ends[i] ,starts[i+1],ends[i+1]);
+                                                    ^~~~
+                                                    enum
+Makefile:6: recipe for target 'threads-demo' failed
+make: *** [threads-demo] Error 1
+08:49:16 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+16:36:55 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+threads-demo.cpp:2:1: error: expected unqualified-id before numeric constant
+ 1
+ ^
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:97:8: error: ‘size_t’ does not name a type; did you mean ‘__size_t’?
+ extern size_t __ctype_get_mb_cur_max (void) __THROW __wur;
+        ^~~~~~
+        __size_t
+/usr/include/stdlib.h:212:36: error: ‘size_t’ has not been declared
+ extern int strfromd (char *__dest, size_t __size, const char *__format,
+                                    ^~~~~~
+/usr/include/stdlib.h:216:36: error: ‘size_t’ has not been declared
+ extern int strfromf (char *__dest, size_t __size, const char *__format,
+                                    ^~~~~~
+/usr/include/stdlib.h:220:36: error: ‘size_t’ has not been declared
+ extern int strfroml (char *__dest, size_t __size, const char *__format,
+                                    ^~~~~~
+/usr/include/stdlib.h:232:38: error: ‘size_t’ has not been declared
+ extern int strfromf32 (char *__dest, size_t __size, const char * __format,
+                                      ^~~~~~
+/usr/include/stdlib.h:238:38: error: ‘size_t’ has not been declared
+ extern int strfromf64 (char *__dest, size_t __size, const char * __format,
+                                      ^~~~~~
+/usr/include/stdlib.h:244:39: error: ‘size_t’ has not been declared
+ extern int strfromf128 (char *__dest, size_t __size, const char * __format,
+                                       ^~~~~~
+/usr/include/stdlib.h:250:39: error: ‘size_t’ has not been declared
+ extern int strfromf32x (char *__dest, size_t __size, const char * __format,
+                                       ^~~~~~
+/usr/include/stdlib.h:256:39: error: ‘size_t’ has not been declared
+ extern int strfromf64x (char *__dest, size_t __size, const char * __format,
+                                       ^~~~~~
+In file included from /usr/include/stdlib.h:394:0,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/sys/types.h:33:9: error: ‘__u_char’ does not name a type; did you mean ‘char’?
+ typedef __u_char u_char;
+         ^~~~~~~~
+         char
+/usr/include/x86_64-linux-gnu/sys/types.h:34:9: error: ‘__u_short’ does not name a type; did you mean ‘__u_intN_t’?
+ typedef __u_short u_short;
+         ^~~~~~~~~
+         __u_intN_t
+/usr/include/x86_64-linux-gnu/sys/types.h:35:9: error: ‘__u_int’ does not name a type; did you mean ‘si_int’?
+ typedef __u_int u_int;
+         ^~~~~~~
+         si_int
+/usr/include/x86_64-linux-gnu/sys/types.h:36:9: error: ‘__u_long’ does not name a type; did you mean ‘long’?
+ typedef __u_long u_long;
+         ^~~~~~~~
+         long
+/usr/include/x86_64-linux-gnu/sys/types.h:37:9: error: ‘__quad_t’ does not name a type; did you mean ‘__muldc3’?
+ typedef __quad_t quad_t;
+         ^~~~~~~~
+         __muldc3
+/usr/include/x86_64-linux-gnu/sys/types.h:38:9: error: ‘__u_quad_t’ does not name a type; did you mean ‘_IO_uid_t’?
+ typedef __u_quad_t u_quad_t;
+         ^~~~~~~~~~
+         _IO_uid_t
+/usr/include/x86_64-linux-gnu/sys/types.h:39:9: error: ‘__fsid_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __fsid_t fsid_t;
+         ^~~~~~~~
+         __size_t
+/usr/include/x86_64-linux-gnu/sys/types.h:44:9: error: ‘__loff_t’ does not name a type; did you mean ‘_IO_off_t’?
+ typedef __loff_t loff_t;
+         ^~~~~~~~
+         _IO_off_t
+/usr/include/x86_64-linux-gnu/sys/types.h:48:9: error: ‘__ino_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __ino_t ino_t;
+         ^~~~~~~
+         __size_t
+/usr/include/x86_64-linux-gnu/sys/types.h:55:9: error: ‘__ino64_t’ does not name a type; did you mean ‘__int128_t’?
+ typedef __ino64_t ino64_t;
+         ^~~~~~~~~
+         __int128_t
+/usr/include/x86_64-linux-gnu/sys/types.h:60:9: error: ‘__dev_t’ does not name a type; did you mean ‘lldiv_t’?
+ typedef __dev_t dev_t;
+         ^~~~~~~
+         lldiv_t
+/usr/include/x86_64-linux-gnu/sys/types.h:65:9: error: ‘__gid_t’ does not name a type; did you mean ‘_IO_pid_t’?
+ typedef __gid_t gid_t;
+         ^~~~~~~
+         _IO_pid_t
+/usr/include/x86_64-linux-gnu/sys/types.h:70:9: error: ‘__mode_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __mode_t mode_t;
+         ^~~~~~~~
+         __size_t
+/usr/include/x86_64-linux-gnu/sys/types.h:75:9: error: ‘__nlink_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __nlink_t nlink_t;
+         ^~~~~~~~~
+         __size_t
+/usr/include/x86_64-linux-gnu/sys/types.h:80:9: error: ‘__uid_t’ does not name a type; did you mean ‘_IO_uid_t’?
+ typedef __uid_t uid_t;
+         ^~~~~~~
+         _IO_uid_t
+/usr/include/x86_64-linux-gnu/sys/types.h:98:9: error: ‘__pid_t’ does not name a type; did you mean ‘_IO_pid_t’?
+ typedef __pid_t pid_t;
+         ^~~~~~~
+         _IO_pid_t
+/usr/include/x86_64-linux-gnu/sys/types.h:104:9: error: ‘__id_t’ does not name a type; did you mean ‘ldiv_t’?
+ typedef __id_t id_t;
+         ^~~~~~
+         ldiv_t
+/usr/include/x86_64-linux-gnu/sys/types.h:115:9: error: ‘__daddr_t’ does not name a type; did you mean ‘__ptr_t’?
+ typedef __daddr_t daddr_t;
+         ^~~~~~~~~
+         __ptr_t
+/usr/include/x86_64-linux-gnu/sys/types.h:116:9: error: ‘__caddr_t’ does not name a type; did you mean ‘__ptr_t’?
+ typedef __caddr_t caddr_t;
+         ^~~~~~~~~
+         __ptr_t
+/usr/include/x86_64-linux-gnu/sys/types.h:122:9: error: ‘__key_t’ does not name a type; did you mean ‘__ptr_t’?
+ typedef __key_t key_t;
+         ^~~~~~~
+         __ptr_t
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:127:0,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:7:9: error: ‘__clock_t’ does not name a type; did you mean ‘__locale_t’?
+ typedef __clock_t clock_t;
+         ^~~~~~~~~
+         __locale_t
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:129:0,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:7:9: error: ‘__clockid_t’ does not name a type; did you mean ‘__locale_t’?
+ typedef __clockid_t clockid_t;
+         ^~~~~~~~~~~
+         __locale_t
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:130:0,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:7:9: error: ‘__time_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __time_t time_t;
+         ^~~~~~~~
+         __size_t
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:131:0,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:7:9: error: ‘__timer_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __timer_t timer_t;
+         ^~~~~~~~~
+         __size_t
+In file included from /usr/include/stdlib.h:394:0,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/sys/types.h:135:9: error: ‘__useconds_t’ does not name a type; did you mean ‘__u_intN_t’?
+ typedef __useconds_t useconds_t;
+         ^~~~~~~~~~~~
+         __u_intN_t
+/usr/include/x86_64-linux-gnu/sys/types.h:139:9: error: ‘__suseconds_t’ does not name a type
+ typedef __suseconds_t suseconds_t;
+         ^~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:156:0,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:24:9: error: ‘__int8_t’ does not name a type; did you mean ‘__int128_t’?
+ typedef __int8_t int8_t;
+         ^~~~~~~~
+         __int128_t
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:25:9: error: ‘__int16_t’ does not name a type; did you mean ‘__int128_t’?
+ typedef __int16_t int16_t;
+         ^~~~~~~~~
+         __int128_t
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:26:9: error: ‘__int32_t’ does not name a type; did you mean ‘__int128_t’?
+ typedef __int32_t int32_t;
+         ^~~~~~~~~
+         __int128_t
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:27:9: error: ‘__int64_t’ does not name a type; did you mean ‘__int128_t’?
+ typedef __int64_t int64_t;
+         ^~~~~~~~~
+         __int128_t
+In file included from /usr/include/endian.h:60:0,
+                 from /usr/include/x86_64-linux-gnu/sys/types.h:194,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:108:17: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+ static __inline __uint64_t
+                 ^~~~~~~~~~
+                 u_int64_t
+In file included from /usr/include/endian.h:61:0,
+                 from /usr/include/x86_64-linux-gnu/sys/types.h:194,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:32:17: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+ static __inline __uint16_t
+                 ^~~~~~~~~~
+                 u_int16_t
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:38:17: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+ static __inline __uint32_t
+                 ^~~~~~~~~~
+                 u_int32_t
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:44:17: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+ static __inline __uint64_t
+                 ^~~~~~~~~~
+                 u_int64_t
+In file included from /usr/include/x86_64-linux-gnu/sys/select.h:37:0,
+                 from /usr/include/x86_64-linux-gnu/sys/types.h:197,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:10:3: error: ‘__time_t’ does not name a type; did you mean ‘__size_t’?
+   __time_t tv_sec;  /* Seconds.  */
+   ^~~~~~~~
+   __size_t
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:11:3: error: ‘__suseconds_t’ does not name a type
+   __suseconds_t tv_usec; /* Microseconds.  */
+   ^~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/sys/select.h:39:0,
+                 from /usr/include/x86_64-linux-gnu/sys/types.h:197,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:10:3: error: ‘__time_t’ does not name a type; did you mean ‘__size_t’?
+   __time_t tv_sec;  /* Seconds.  */
+   ^~~~~~~~
+   __size_t
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:11:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t tv_nsec; /* Nanoseconds.  */
+   ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/sys/types.h:205:0,
+                 from /usr/include/stdlib.h:394,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:73:1: error: ‘__dev_t’ was not declared in this scope
+ __SYSMACROS_DECLARE_MAJOR (__SYSMACROS_DECL_TEMPL)
+ ^
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:73:1: note: suggested alternative: ‘lldiv_t’
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:74:1: error: ‘__dev_t’ was not declared in this scope
+ __SYSMACROS_DECLARE_MINOR (__SYSMACROS_DECL_TEMPL)
+ ^
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:74:1: note: suggested alternative: ‘lldiv_t’
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:75:1: error: ‘__dev_t’ does not name a type; did you mean ‘lldiv_t’?
+ __SYSMACROS_DECLARE_MAKEDEV (__SYSMACROS_DECL_TEMPL)
+ ^
+In file included from /usr/include/stdlib.h:394:0,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/sys/types.h:212:9: error: ‘__blksize_t’ does not name a type; did you mean ‘__size_t’?
+ typedef __blksize_t blksize_t;
+         ^~~~~~~~~~~
+         __size_t
+/usr/include/x86_64-linux-gnu/sys/types.h:219:9: error: ‘__blkcnt_t’ does not name a type; did you mean ‘__sigset_t’?
+ typedef __blkcnt_t blkcnt_t;  /* Type to count number of disk blocks.  */
+         ^~~~~~~~~~
+         __sigset_t
+/usr/include/x86_64-linux-gnu/sys/types.h:223:9: error: ‘__fsblkcnt_t’ does not name a type; did you mean ‘__sigset_t’?
+ typedef __fsblkcnt_t fsblkcnt_t; /* Type to count file system blocks.  */
+         ^~~~~~~~~~~~
+         __sigset_t
+/usr/include/x86_64-linux-gnu/sys/types.h:227:9: error: ‘__fsfilcnt_t’ does not name a type; did you mean ‘__sigset_t’?
+ typedef __fsfilcnt_t fsfilcnt_t; /* Type to count file system inodes.  */
+         ^~~~~~~~~~~~
+         __sigset_t
+/usr/include/x86_64-linux-gnu/sys/types.h:246:9: error: ‘__blkcnt64_t’ does not name a type; did you mean ‘u_int64_t’?
+ typedef __blkcnt64_t blkcnt64_t;     /* Type to count number of disk blocks. */
+         ^~~~~~~~~~~~
+         u_int64_t
+/usr/include/x86_64-linux-gnu/sys/types.h:247:9: error: ‘__fsblkcnt64_t’ does not name a type; did you mean ‘u_int64_t’?
+ typedef __fsblkcnt64_t fsblkcnt64_t; /* Type to count file system blocks.  */
+         ^~~~~~~~~~~~~~
+         u_int64_t
+/usr/include/x86_64-linux-gnu/sys/types.h:248:9: error: ‘__fsfilcnt64_t’ does not name a type; did you mean ‘u_int64_t’?
+ typedef __fsfilcnt64_t fsfilcnt64_t; /* Type to count file system inodes.  */
+         ^~~~~~~~~~~~~~
+         u_int64_t
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:411:4: error: ‘size_t’ has not been declared
+    size_t __statelen) __THROW __nonnull ((2));
+    ^~~~~~
+/usr/include/stdlib.h:425:5: error: ‘int32_t’ does not name a type; did you mean ‘u_int32_t’?
+     int32_t *fptr;  /* Front pointer.  */
+     ^~~~~~~
+     u_int32_t
+/usr/include/stdlib.h:426:5: error: ‘int32_t’ does not name a type; did you mean ‘u_int32_t’?
+     int32_t *rptr;  /* Rear pointer.  */
+     ^~~~~~~
+     u_int32_t
+/usr/include/stdlib.h:427:5: error: ‘int32_t’ does not name a type; did you mean ‘u_int32_t’?
+     int32_t *state;  /* Array of state values.  */
+     ^~~~~~~
+     u_int32_t
+/usr/include/stdlib.h:431:5: error: ‘int32_t’ does not name a type; did you mean ‘u_int32_t’?
+     int32_t *end_ptr;  /* Pointer behind state table.  */
+     ^~~~~~~
+     u_int32_t
+/usr/include/stdlib.h:435:8: error: ‘int32_t’ has not been declared
+        int32_t *__restrict __result) __THROW __nonnull ((1, 2));
+        ^~~~~~~
+/usr/include/stdlib.h:441:4: error: ‘size_t’ has not been declared
+    size_t __statelen,
+    ^~~~~~
+/usr/include/stdlib.h:539:22: error: ‘size_t’ was not declared in this scope
+ extern void *malloc (size_t __size) __THROW __attribute_malloc__ __wur;
+                      ^~~~~~
+/usr/include/stdlib.h:539:22: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:541:22: error: ‘size_t’ was not declared in this scope
+ extern void *calloc (size_t __nmemb, size_t __size)
+                      ^~~~~~
+/usr/include/stdlib.h:541:22: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:541:38: error: ‘size_t’ was not declared in this scope
+ extern void *calloc (size_t __nmemb, size_t __size)
+                                      ^~~~~~
+/usr/include/stdlib.h:541:38: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:541:51: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern void *calloc (size_t __nmemb, size_t __size)
+                                                   ^
+/usr/include/stdlib.h:549:36: error: ‘size_t’ has not been declared
+ extern void *realloc (void *__ptr, size_t __size)
+                                    ^~~~~~
+/usr/include/stdlib.h:558:41: error: ‘size_t’ has not been declared
+ extern void *reallocarray (void *__ptr, size_t __nmemb, size_t __size)
+                                         ^~~~~~
+/usr/include/stdlib.h:558:57: error: ‘size_t’ has not been declared
+ extern void *reallocarray (void *__ptr, size_t __nmemb, size_t __size)
+                                                         ^~~~~~
+In file included from /usr/include/stdlib.h:566:0,
+                 from /usr/include/c++/7/cstdlib:75,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/alloca.h:32:22: error: ‘size_t’ was not declared in this scope
+ extern void *alloca (size_t __size) __THROW;
+                      ^~~~~~
+/usr/include/alloca.h:32:22: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:572:22: error: ‘size_t’ was not declared in this scope
+ extern void *valloc (size_t __size) __THROW __attribute_malloc__ __wur;
+                      ^~~~~~
+/usr/include/stdlib.h:572:22: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:577:45: error: ‘size_t’ has not been declared
+ extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+                                             ^~~~~~
+/usr/include/stdlib.h:577:65: error: ‘size_t’ has not been declared
+ extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+                                                                 ^~~~~~
+/usr/include/stdlib.h:583:29: error: ‘size_t’ was not declared in this scope
+ extern void *aligned_alloc (size_t __alignment, size_t __size)
+                             ^~~~~~
+/usr/include/stdlib.h:583:29: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:583:49: error: ‘size_t’ was not declared in this scope
+ extern void *aligned_alloc (size_t __alignment, size_t __size)
+                                                 ^~~~~~
+/usr/include/stdlib.h:583:49: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/cstdlib:75:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/stdlib.h:583:62: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern void *aligned_alloc (size_t __alignment, size_t __size)
+                                                              ^
+/usr/include/stdlib.h:818:9: error: ‘size_t’ has not been declared
+         size_t __nmemb, size_t __size, __compar_fn_t __compar)
+         ^~~~~~
+/usr/include/stdlib.h:818:25: error: ‘size_t’ has not been declared
+         size_t __nmemb, size_t __size, __compar_fn_t __compar)
+                         ^~~~~~
+/usr/include/stdlib.h:827:34: error: ‘size_t’ has not been declared
+ extern void qsort (void *__base, size_t __nmemb, size_t __size,
+                                  ^~~~~~
+/usr/include/stdlib.h:827:50: error: ‘size_t’ has not been declared
+ extern void qsort (void *__base, size_t __nmemb, size_t __size,
+                                                  ^~~~~~
+/usr/include/stdlib.h:830:36: error: ‘size_t’ has not been declared
+ extern void qsort_r (void *__base, size_t __nmemb, size_t __size,
+                                    ^~~~~~
+/usr/include/stdlib.h:830:52: error: ‘size_t’ has not been declared
+ extern void qsort_r (void *__base, size_t __nmemb, size_t __size,
+                                                    ^~~~~~
+/usr/include/stdlib.h:901:6: error: ‘size_t’ has not been declared
+      size_t __len) __THROW __nonnull ((3, 4, 5));
+      ^~~~~~
+/usr/include/stdlib.h:904:6: error: ‘size_t’ has not been declared
+      size_t __len) __THROW __nonnull ((3, 4, 5));
+      ^~~~~~
+/usr/include/stdlib.h:908:31: error: ‘size_t’ has not been declared
+       char *__restrict __buf, size_t __len)
+                               ^~~~~~
+/usr/include/stdlib.h:912:31: error: ‘size_t’ has not been declared
+       char *__restrict __buf, size_t __len)
+                               ^~~~~~
+/usr/include/stdlib.h:919:36: error: ‘size_t’ has not been declared
+ extern int mblen (const char *__s, size_t __n) __THROW;
+                                    ^~~~~~
+/usr/include/stdlib.h:923:34: error: ‘size_t’ has not been declared
+      const char *__restrict __s, size_t __n) __THROW;
+                                  ^~~~~~
+/usr/include/stdlib.h:930:8: error: ‘size_t’ does not name a type; did you mean ‘__size_t’?
+ extern size_t mbstowcs (wchar_t *__restrict  __pwcs,
+        ^~~~~~
+        __size_t
+/usr/include/stdlib.h:933:8: error: ‘size_t’ does not name a type; did you mean ‘__size_t’?
+ extern size_t wcstombs (char *__restrict __s,
+        ^~~~~~
+        __size_t
+/usr/include/stdlib.h:995:46: error: ‘size_t’ has not been declared
+ extern int ptsname_r (int __fd, char *__buf, size_t __buflen)
+                                              ^~~~~~
+In file included from /usr/include/c++/7/stdlib.h:36:0,
+                 from threads-demo.cpp:581:
+/usr/include/c++/7/cstdlib:154:11: error: ‘::mbstowcs’ has not been declared
+   using ::mbstowcs;
+           ^~~~~~~~
+/usr/include/c++/7/cstdlib:171:11: error: ‘::wcstombs’ has not been declared
+   using ::wcstombs;
+           ^~~~~~~~
+In file included from threads-demo.cpp:581:0:
+/usr/include/c++/7/stdlib.h:68:12: error: ‘std::mbstowcs’ has not been declared
+ using std::mbstowcs;
+            ^~~~~~~~
+/usr/include/c++/7/stdlib.h:80:12: error: ‘std::wcstombs’ has not been declared
+ using std::wcstombs;
+            ^~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/bits/time.h:73:0,
+                 from /usr/include/time.h:33,
+                 from threads-demo.cpp:582:
+/usr/include/x86_64-linux-gnu/bits/timex.h:29:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t offset; /* time offset (usec) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:30:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t freq; /* frequency offset (scaled ppm) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:31:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t maxerror; /* maximum error (usec) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:32:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t esterror; /* estimated error (usec) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:34:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t constant; /* pll time constant */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:35:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t precision; /* clock precision (usec) (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:36:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t tolerance; /* clock frequency tolerance (ppm) (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:38:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t tick; /* (modified) usecs between clock ticks */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:39:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t ppsfreq; /* pps frequency (scaled ppm) (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:40:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t jitter; /* pps jitter (us) (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:42:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t stabil; /* pps stability (scaled ppm) (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:43:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t jitcnt; /* jitter limit exceeded (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:44:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t calcnt; /* calibration intervals (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:45:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t errcnt; /* calibration errors (ro) */
+   ^~~~~~~~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/timex.h:46:3: error: ‘__syscall_slong_t’ does not name a type
+   __syscall_slong_t stbcnt; /* stability limit exceeded (ro) */
+   ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/time.h:33:0,
+                 from threads-demo.cpp:582:
+/usr/include/x86_64-linux-gnu/bits/time.h:78:27: error: ‘__clockid_t’ was not declared in this scope
+ extern int clock_adjtime (__clockid_t __clock_id, struct timex *__utx) __THROW;
+                           ^~~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/time.h:78:27: note: suggested alternative: ‘__locale_t’
+ extern int clock_adjtime (__clockid_t __clock_id, struct timex *__utx) __THROW;
+                           ^~~~~~~~~~~
+                           __locale_t
+/usr/include/x86_64-linux-gnu/bits/time.h:78:51: error: expected primary-expression before ‘struct’
+ extern int clock_adjtime (__clockid_t __clock_id, struct timex *__utx) __THROW;
+                                                   ^~~~~~
+/usr/include/x86_64-linux-gnu/bits/time.h:78:70: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int clock_adjtime (__clockid_t __clock_id, struct timex *__utx) __THROW;
+                                                                      ^
+In file included from threads-demo.cpp:582:0:
+/usr/include/time.h:72:8: error: ‘clock_t’ does not name a type; did you mean ‘unlockpt’?
+ extern clock_t clock (void) __THROW;
+        ^~~~~~~
+        unlockpt
+/usr/include/time.h:75:8: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern time_t time (time_t *__timer) __THROW;
+        ^~~~~~
+        timex
+/usr/include/time.h:78:25: error: ‘time_t’ was not declared in this scope
+ extern double difftime (time_t __time1, time_t __time0)
+                         ^~~~~~
+/usr/include/time.h:78:25: note: suggested alternative: ‘timex’
+ extern double difftime (time_t __time1, time_t __time0)
+                         ^~~~~~
+                         timex
+/usr/include/time.h:78:41: error: ‘time_t’ was not declared in this scope
+ extern double difftime (time_t __time1, time_t __time0)
+                                         ^~~~~~
+/usr/include/time.h:78:41: note: suggested alternative: ‘timex’
+ extern double difftime (time_t __time1, time_t __time0)
+                                         ^~~~~~
+                                         timex
+/usr/include/time.h:78:55: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern double difftime (time_t __time1, time_t __time0)
+                                                       ^
+/usr/include/time.h:82:8: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern time_t mktime (struct tm *__tp) __THROW;
+        ^~~~~~
+        timex
+/usr/include/time.h:88:8: error: ‘size_t’ does not name a type; did you mean ‘__size_t’?
+ extern size_t strftime (char *__restrict __s, size_t __maxsize,
+        ^~~~~~
+        __size_t
+/usr/include/time.h:104:8: error: ‘size_t’ does not name a type; did you mean ‘__size_t’?
+ extern size_t strftime_l (char *__restrict __s, size_t __maxsize,
+        ^~~~~~
+        __size_t
+/usr/include/time.h:119:33: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern struct tm *gmtime (const time_t *__timer) __THROW;
+                                 ^~~~~~
+                                 timex
+/usr/include/time.h:123:36: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern struct tm *localtime (const time_t *__timer) __THROW;
+                                    ^~~~~~
+                                    timex
+/usr/include/time.h:128:35: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern struct tm *gmtime_r (const time_t *__restrict __timer,
+                                   ^~~~~~
+                                   timex
+/usr/include/time.h:133:38: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern struct tm *localtime_r (const time_t *__restrict __timer,
+                                      ^~~~~~
+                                      timex
+/usr/include/time.h:142:27: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern char *ctime (const time_t *__timer) __THROW;
+                           ^~~~~~
+                           timex
+/usr/include/time.h:153:29: error: ‘time_t’ does not name a type; did you mean ‘timex’?
+ extern char *ctime_r (const time_t *__restrict __timer,
+                             ^~~~~~
+                             timex
+/usr/include/time.h:181:25: error: ‘time_t’ does not name a type; did you mean ‘ctime_r’?
+ extern int stime (const time_t *__when) __THROW;
+                         ^~~~~~
+                         ctime_r
+/usr/include/time.h:196:8: error: ‘time_t’ does not name a type; did you mean ‘ctime_r’?
+ extern time_t timegm (struct tm *__tp) __THROW;
+        ^~~~~~
+        ctime_r
+/usr/include/time.h:199:8: error: ‘time_t’ does not name a type; did you mean ‘ctime_r’?
+ extern time_t timelocal (struct tm *__tp) __THROW;
+        ^~~~~~
+        ctime_r
+/usr/include/time.h:216:26: error: ‘clockid_t’ was not declared in this scope
+ extern int clock_getres (clockid_t __clock_id, struct timespec *__res) __THROW;
+                          ^~~~~~~~~
+/usr/include/time.h:216:26: note: suggested alternative: ‘locale_t’
+ extern int clock_getres (clockid_t __clock_id, struct timespec *__res) __THROW;
+                          ^~~~~~~~~
+                          locale_t
+/usr/include/time.h:216:48: error: expected primary-expression before ‘struct’
+ extern int clock_getres (clockid_t __clock_id, struct timespec *__res) __THROW;
+                                                ^~~~~~
+/usr/include/time.h:216:70: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int clock_getres (clockid_t __clock_id, struct timespec *__res) __THROW;
+                                                                      ^
+/usr/include/time.h:219:27: error: ‘clockid_t’ was not declared in this scope
+ extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) __THROW;
+                           ^~~~~~~~~
+/usr/include/time.h:219:27: note: suggested alternative: ‘locale_t’
+ extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) __THROW;
+                           ^~~~~~~~~
+                           locale_t
+/usr/include/time.h:219:49: error: expected primary-expression before ‘struct’
+ extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) __THROW;
+                                                 ^~~~~~
+/usr/include/time.h:219:70: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) __THROW;
+                                                                      ^
+/usr/include/time.h:222:27: error: ‘clockid_t’ was not declared in this scope
+ extern int clock_settime (clockid_t __clock_id, const struct timespec *__tp)
+                           ^~~~~~~~~
+/usr/include/time.h:222:27: note: suggested alternative: ‘locale_t’
+ extern int clock_settime (clockid_t __clock_id, const struct timespec *__tp)
+                           ^~~~~~~~~
+                           locale_t
+/usr/include/time.h:222:49: error: expected primary-expression before ‘const’
+ extern int clock_settime (clockid_t __clock_id, const struct timespec *__tp)
+                                                 ^~~~~
+/usr/include/time.h:222:76: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int clock_settime (clockid_t __clock_id, const struct timespec *__tp)
+                                                                            ^
+/usr/include/time.h:230:29: error: ‘clockid_t’ was not declared in this scope
+ extern int clock_nanosleep (clockid_t __clock_id, int __flags,
+                             ^~~~~~~~~
+/usr/include/time.h:230:29: note: suggested alternative: ‘locale_t’
+ extern int clock_nanosleep (clockid_t __clock_id, int __flags,
+                             ^~~~~~~~~
+                             locale_t
+/usr/include/time.h:230:51: error: expected primary-expression before ‘int’
+ extern int clock_nanosleep (clockid_t __clock_id, int __flags,
+                                                   ^~~
+/usr/include/time.h:231:8: error: expected primary-expression before ‘const’
+        const struct timespec *__req,
+        ^~~~~
+/usr/include/time.h:232:8: error: expected primary-expression before ‘struct’
+        struct timespec *__rem);
+        ^~~~~~
+/usr/include/time.h:232:30: error: expression list treated as compound expression in initializer [-fpermissive]
+        struct timespec *__rem);
+                              ^
+/usr/include/time.h:235:33: error: ‘pid_t’ was not declared in this scope
+ extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __THROW;
+                                 ^~~~~
+/usr/include/time.h:235:33: note: suggested alternative: ‘div_t’
+ extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __THROW;
+                                 ^~~~~
+                                 div_t
+/usr/include/time.h:235:46: error: ‘clockid_t’ was not declared in this scope
+ extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __THROW;
+                                              ^~~~~~~~~
+/usr/include/time.h:235:46: note: suggested alternative: ‘locale_t’
+ extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __THROW;
+                                              ^~~~~~~~~
+                                              locale_t
+/usr/include/time.h:235:57: error: ‘__clock_id’ was not declared in this scope
+Makefile:6: recipe for target 'threads-demo' failed
+ extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __THROW;
+                                                         ^~~~~~~~~~
+/usr/include/time.h:235:67: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) __THROW;
+                                                                   ^
+/usr/include/time.h:240:26: error: ‘clockid_t’ was not declared in this scope
+ extern int timer_create (clockid_t __clock_id,
+                          ^~~~~~~~~
+/usr/include/time.h:240:26: note: suggested alternative: ‘locale_t’
+ extern int timer_create (clockid_t __clock_id,
+                          ^~~~~~~~~
+                          locale_t
+/usr/include/time.h:241:5: error: expected primary-expression before ‘struct’
+     struct sigevent *__restrict __evp,
+     ^~~~~~
+/usr/include/time.h:242:5: error: ‘timer_t’ was not declared in this scope
+     timer_t *__restrict __timerid) __THROW;
+     ^~~~~~~
+/usr/include/time.h:242:5: note: suggested alternative: ‘ctime_r’
+     timer_t *__restrict __timerid) __THROW;
+     ^~~~~~~
+     ctime_r
+/usr/include/time.h:242:14: error: expected primary-expression before ‘__restrict’
+     timer_t *__restrict __timerid) __THROW;
+              ^~~~~~~~~~
+/usr/include/time.h:242:34: error: expression list treated as compound expression in initializer [-fpermissive]
+     timer_t *__restrict __timerid) __THROW;
+                                  ^
+/usr/include/time.h:245:26: error: ‘timer_t’ was not declared in this scope
+ extern int timer_delete (timer_t __timerid) __THROW;
+                          ^~~~~~~
+/usr/include/time.h:245:26: note: suggested alternative: ‘ctime_r’
+ extern int timer_delete (timer_t __timerid) __THROW;
+                          ^~~~~~~
+                          ctime_r
+/usr/include/time.h:248:27: error: ‘timer_t’ was not declared in this scope
+ extern int timer_settime (timer_t __timerid, int __flags,
+                           ^~~~~~~
+/usr/include/time.h:248:27: note: suggested alternative: ‘ctime_r’
+ extern int timer_settime (timer_t __timerid, int __flags,
+                           ^~~~~~~
+                           ctime_r
+/usr/include/time.h:248:46: error: expected primary-expression before ‘int’
+ extern int timer_settime (timer_t __timerid, int __flags,
+                                              ^~~
+/usr/include/time.h:249:6: error: expected primary-expression before ‘const’
+      const struct itimerspec *__restrict __value,
+      ^~~~~
+/usr/include/time.h:250:6: error: expected primary-expression before ‘struct’
+      struct itimerspec *__restrict __ovalue) __THROW;
+      ^~~~~~
+/usr/include/time.h:250:44: error: expression list treated as compound expression in initializer [-fpermissive]
+      struct itimerspec *__restrict __ovalue) __THROW;
+                                            ^
+/usr/include/time.h:253:27: error: ‘timer_t’ was not declared in this scope
+ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
+                           ^~~~~~~
+/usr/include/time.h:253:27: note: suggested alternative: ‘ctime_r’
+ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
+                           ^~~~~~~
+                           ctime_r
+/usr/include/time.h:253:46: error: expected primary-expression before ‘struct’
+ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
+                                              ^~~~~~
+/usr/include/time.h:253:72: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
+                                                                        ^
+/usr/include/time.h:257:30: error: ‘timer_t’ was not declared in this scope
+ extern int timer_getoverrun (timer_t __timerid) __THROW;
+                              ^~~~~~~
+/usr/include/time.h:257:30: note: suggested alternative: ‘ctime_r’
+ extern int timer_getoverrun (timer_t __timerid) __THROW;
+                              ^~~~~~~
+                              ctime_r
+In file included from /usr/include/signal.h:32:0,
+                 from /usr/include/x86_64-linux-gnu/sys/param.h:28,
+                 from threads-demo.cpp:584:
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:8:9: error: ‘__sig_atomic_t’ does not name a type; did you mean ‘__sigset_t’?
+ typedef __sig_atomic_t sig_atomic_t;
+         ^~~~~~~~~~~~~~
+         __sigset_t
+In file included from /usr/include/signal.h:57:0,
+                 from /usr/include/x86_64-linux-gnu/sys/param.h:28,
+                 from threads-demo.cpp:584:
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:58:6: error: ‘__pid_t’ does not name a type; did you mean ‘_IO_pid_t’?
+      __pid_t si_pid; /* Sending process ID.  */
+      ^~~~~~~
+      _IO_pid_t
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:59:6: error: ‘__uid_t’ does not name a type; did you mean ‘_IO_uid_t’?
+      __uid_t si_uid; /* Real user ID of sending process.  */
+      ^~~~~~~
+      _IO_uid_t
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:73:6: error: ‘__pid_t’ does not name a type; did you mean ‘_IO_pid_t’?
+      __pid_t si_pid; /* Sending process ID.  */
+      ^~~~~~~
+      _IO_pid_t
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:74:6: error: ‘__uid_t’ does not name a type; did you mean ‘_IO_uid_t’?
+      __uid_t si_uid; /* Real user ID of sending process.  */
+      ^~~~~~~
+      _IO_uid_t
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:81:6: error: ‘__pid_t’ does not name a type; did you mean ‘_IO_pid_t’?
+      __pid_t si_pid; /* Which child.  */
+      ^~~~~~~
+      _IO_pid_t
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:82:6: error: ‘__uid_t’ does not name a type; did you mean ‘_IO_uid_t’?
+      __uid_t si_uid; /* Real user ID of sending process.  */
+      ^~~~~~~
+      _IO_uid_t
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:84:6: error: ‘__clock_t’ does not name a type; did you mean ‘unlockpt’?
+      __SI_CLOCK_T si_utime;
+      ^
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:85:6: error: ‘__clock_t’ does not name a type; did you mean ‘unlockpt’?
+      __SI_CLOCK_T si_stime;
+      ^
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:103:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t _pkey;
+   ^~~~~~~~~~
+   u_int32_t
+In file included from /usr/include/signal.h:66:0,
+                 from /usr/include/x86_64-linux-gnu/sys/param.h:28,
+                 from threads-demo.cpp:584:
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:34:2: error: ‘__pid_t’ does not name a type; did you mean ‘_IO_pid_t’?
+  __pid_t _tid;
+  ^~~~~~~
+  _IO_pid_t
+In file included from /usr/include/x86_64-linux-gnu/sys/param.h:28:0,
+                 from threads-demo.cpp:584:
+/usr/include/signal.h:112:18: error: ‘__pid_t’ was not declared in this scope
+ extern int kill (__pid_t __pid, int __sig) __THROW;
+                  ^~~~~~~
+/usr/include/signal.h:112:18: note: suggested alternative: ‘_IO_pid_t’
+ extern int kill (__pid_t __pid, int __sig) __THROW;
+                  ^~~~~~~
+                  _IO_pid_t
+/usr/include/signal.h:112:33: error: expected primary-expression before ‘int’
+ extern int kill (__pid_t __pid, int __sig) __THROW;
+                                 ^~~
+/usr/include/signal.h:112:42: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int kill (__pid_t __pid, int __sig) __THROW;
+                                          ^
+/usr/include/signal.h:119:20: error: ‘__pid_t’ was not declared in this scope
+ extern int killpg (__pid_t __pgrp, int __sig) __THROW;
+                    ^~~~~~~
+/usr/include/signal.h:119:20: note: suggested alternative: ‘_IO_pid_t’
+ extern int killpg (__pid_t __pgrp, int __sig) __THROW;
+                    ^~~~~~~
+                    _IO_pid_t
+/usr/include/signal.h:119:36: error: expected primary-expression before ‘int’
+ extern int killpg (__pid_t __pgrp, int __sig) __THROW;
+                                    ^~~
+/usr/include/signal.h:119:45: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int killpg (__pid_t __pgrp, int __sig) __THROW;
+                                             ^
+In file included from /usr/include/x86_64-linux-gnu/sys/param.h:28:0,
+                 from threads-demo.cpp:584:
+/usr/include/signal.h:276:22: error: ‘__pid_t’ was not declared in this scope
+ extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
+                      ^~~~~~~
+/usr/include/signal.h:276:22: note: suggested alternative: ‘_IO_pid_t’
+ extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
+                      ^~~~~~~
+                      _IO_pid_t
+/usr/include/signal.h:276:37: error: expected primary-expression before ‘int’
+ extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
+                                     ^~~
+/usr/include/signal.h:276:48: error: expected primary-expression before ‘const’
+ extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
+                                                ^~~~~
+/usr/include/signal.h:276:72: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int sigqueue (__pid_t __pid, int __sig, const union sigval __val)
+                                                                        ^
+In file included from /usr/include/signal.h:291:0,
+                 from /usr/include/x86_64-linux-gnu/sys/param.h:28,
+                 from threads-demo.cpp:584:
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:33:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t magic1;
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:34:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t extended_size;
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:35:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t xstate_bv;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:36:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t xstate_size;
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:37:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t __glibc_reserved1[7];
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:55:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t element[4];
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:126:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  cwd;
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:127:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  swd;
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:128:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  ftw;
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:129:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  fop;
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:130:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t  rip;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:131:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t  rdp;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:132:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t  mxcsr;
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:133:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t  mxcr_mask;
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:136:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t  __glibc_reserved1[24];
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:141:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r8;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:142:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r9;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:143:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r10;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:144:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r11;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:145:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r12;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:146:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r13;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:147:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r14;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:148:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t r15;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:149:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rdi;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:150:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rsi;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:151:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rbp;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:152:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rbx;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:153:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rdx;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:154:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rax;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:155:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rcx;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:156:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rsp;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:157:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t rip;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:158:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t eflags;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:163:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t err;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:164:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t trapno;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:165:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t oldmask;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:166:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t cr2;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:170:7: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+       __uint64_t __fpstate_word;
+       ^~~~~~~~~~
+       u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:172:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t __reserved1 [8];
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:179:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t xstate_bv;
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:180:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t __glibc_reserved1[2];
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:181:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t __glibc_reserved2[5];
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:186:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t ymmh_space[64];
+   ^~~~~~~~~~
+   u_int32_t
+In file included from /usr/include/signal.h:303:0,
+                 from /usr/include/x86_64-linux-gnu/sys/param.h:28,
+                 from threads-demo.cpp:584:
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:30:5: error: ‘size_t’ does not name a type; did you mean ‘sig_t’?
+     size_t ss_size;
+     ^~~~~~
+     sig_t
+In file included from /usr/include/signal.h:306:0,
+                 from /usr/include/x86_64-linux-gnu/sys/param.h:28,
+                 from threads-demo.cpp:584:
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:110:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t __ctx(element)[4];
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:116:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  __ctx(cwd);
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:117:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  __ctx(swd);
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:118:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  __ctx(ftw);
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:119:3: error: ‘__uint16_t’ does not name a type; did you mean ‘u_int16_t’?
+   __uint16_t  __ctx(fop);
+   ^~~~~~~~~~
+   u_int16_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:120:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t  __ctx(rip);
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:121:3: error: ‘__uint64_t’ does not name a type; did you mean ‘u_int64_t’?
+   __uint64_t  __ctx(rdp);
+   ^~~~~~~~~~
+   u_int64_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:122:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t  __ctx(mxcsr);
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:123:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t  __ctx(mxcr_mask);
+   ^~~~~~~~~~
+   u_int32_t
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:126:3: error: ‘__uint32_t’ does not name a type; did you mean ‘u_int32_t’?
+   __uint32_t  __glibc_reserved1[24];
+   ^~~~~~~~~~
+   u_int32_t
+In file included from /usr/include/sched.h:44:0,
+                 from /usr/include/pthread.h:23,
+                 from threads-demo.cpp:585:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:117:30: error: ‘size_t’ was not declared in this scope
+ extern int __sched_cpucount (size_t __setsize, const cpu_set_t *__setp)
+                              ^~~~~~
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:117:30: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/sched.h:44:0,
+                 from /usr/include/pthread.h:23,
+                 from threads-demo.cpp:585:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:117:48: error: expected primary-expression before ‘const’
+ extern int __sched_cpucount (size_t __setsize, const cpu_set_t *__setp)
+                                                ^~~~~
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:117:71: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int __sched_cpucount (size_t __setsize, const cpu_set_t *__setp)
+                                                                       ^
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:119:37: error: ‘size_t’ was not declared in this scope
+ extern cpu_set_t *__sched_cpualloc (size_t __count) __THROW __wur;
+                                     ^~~~~~
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:119:37: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/pthread.h:23:0,
+                 from threads-demo.cpp:585:
+/usr/include/sched.h:54:28: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_setparam (__pid_t __pid, const struct sched_param *__param)
+                            ^~~~~~~
+/usr/include/sched.h:54:28: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_setparam (__pid_t __pid, const struct sched_param *__param)
+                            ^~~~~~~
+                            _IO_pid_t
+/usr/include/sched.h:54:43: error: expected primary-expression before ‘const’
+ extern int sched_setparam (__pid_t __pid, const struct sched_param *__param)
+                                           ^~~~~
+/usr/include/sched.h:54:76: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int sched_setparam (__pid_t __pid, const struct sched_param *__param)
+                                                                            ^
+/usr/include/sched.h:58:28: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_getparam (__pid_t __pid, struct sched_param *__param) __THROW;
+                            ^~~~~~~
+/usr/include/sched.h:58:28: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_getparam (__pid_t __pid, struct sched_param *__param) __THROW;
+                            ^~~~~~~
+                            _IO_pid_t
+/usr/include/sched.h:58:43: error: expected primary-expression before ‘struct’
+ extern int sched_getparam (__pid_t __pid, struct sched_param *__param) __THROW;
+                                           ^~~~~~
+/usr/include/sched.h:58:70: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int sched_getparam (__pid_t __pid, struct sched_param *__param) __THROW;
+                                                                      ^
+/usr/include/sched.h:61:32: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_setscheduler (__pid_t __pid, int __policy,
+                                ^~~~~~~
+/usr/include/sched.h:61:32: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_setscheduler (__pid_t __pid, int __policy,
+                                ^~~~~~~
+                                _IO_pid_t
+/usr/include/sched.h:61:47: error: expected primary-expression before ‘int’
+ extern int sched_setscheduler (__pid_t __pid, int __policy,
+                                               ^~~
+/usr/include/sched.h:62:11: error: expected primary-expression before ‘const’
+           const struct sched_param *__param) __THROW;
+           ^~~~~
+/usr/include/sched.h:62:44: error: expression list treated as compound expression in initializer [-fpermissive]
+           const struct sched_param *__param) __THROW;
+                                            ^
+/usr/include/sched.h:65:32: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_getscheduler (__pid_t __pid) __THROW;
+                                ^~~~~~~
+/usr/include/sched.h:65:32: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_getscheduler (__pid_t __pid) __THROW;
+                                ^~~~~~~
+                                _IO_pid_t
+/usr/include/sched.h:77:35: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) __THROW;
+                                   ^~~~~~~
+/usr/include/sched.h:77:35: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) __THROW;
+                                   ^~~~~~~
+                                   _IO_pid_t
+/usr/include/sched.h:77:50: error: expected primary-expression before ‘struct’
+ extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) __THROW;
+                                                  ^~~~~~
+/usr/include/sched.h:77:70: error: expression list treated as compound expression in initializer [-fpermissive]
+ extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) __THROW;
+                                                                      ^
+/usr/include/sched.h:121:31: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_setaffinity (__pid_t __pid, size_t __cpusetsize,
+                               ^~~~~~~
+/usr/include/sched.h:121:31: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_setaffinity (__pid_t __pid, size_t __cpusetsize,
+                               ^~~~~~~
+                               _IO_pid_t
+/usr/include/sched.h:121:46: error: ‘size_t’ was not declared in this scope
+ extern int sched_setaffinity (__pid_t __pid, size_t __cpusetsize,
+                                              ^~~~~~
+/usr/include/sched.h:121:46: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/pthread.h:23:0,
+                 from threads-demo.cpp:585:
+/usr/include/sched.h:122:10: error: expected primary-expression before ‘const’
+          const cpu_set_t *__cpuset) __THROW;
+          ^~~~~
+/usr/include/sched.h:122:35: error: expression list treated as compound expression in initializer [-fpermissive]
+          const cpu_set_t *__cpuset) __THROW;
+                                   ^
+/usr/include/sched.h:125:31: error: ‘__pid_t’ was not declared in this scope
+ extern int sched_getaffinity (__pid_t __pid, size_t __cpusetsize,
+                               ^~~~~~~
+/usr/include/sched.h:125:31: note: suggested alternative: ‘_IO_pid_t’
+ extern int sched_getaffinity (__pid_t __pid, size_t __cpusetsize,
+                               ^~~~~~~
+                               _IO_pid_t
+/usr/include/sched.h:125:46: error: ‘size_t’ was not declared in this scope
+ extern int sched_getaffinity (__pid_t __pid, size_t __cpusetsize,
+                                              ^~~~~~
+/usr/include/sched.h:125:46: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/pthread.h:23:0,
+                 from threads-demo.cpp:585:
+/usr/include/sched.h:126:20: error: expected primary-expression before ‘*’ token
+          cpu_set_t *__cpuset) __THROW;
+                    ^
+/usr/include/sched.h:126:21: error: ‘__cpuset’ was not declared in this scope
+          cpu_set_t *__cpuset) __THROW;
+                     ^~~~~~~~
+/usr/include/sched.h:126:21: note: suggested alternative: ‘__ptr_t’
+          cpu_set_t *__cpuset) __THROW;
+                     ^~~~~~~~
+                     __ptr_t
+/usr/include/sched.h:126:29: error: expression list treated as compound expression in initializer [-fpermissive]
+          cpu_set_t *__cpuset) __THROW;
+                             ^
+In file included from threads-demo.cpp:585:0:
+/usr/include/pthread.h:307:11: error: ‘size_t’ has not been declared
+           size_t *__guardsize)
+           ^~~~~~
+/usr/include/pthread.h:312:11: error: ‘size_t’ has not been declared
+           size_t __guardsize)
+           ^~~~~~
+/usr/include/pthread.h:370:19: error: ‘size_t’ has not been declared
+           __attr, size_t *__restrict __stacksize)
+                   ^~~~~~
+/usr/include/pthread.h:377:11: error: ‘size_t’ has not been declared
+           size_t __stacksize)
+           ^~~~~~
+/usr/include/pthread.h:384:7: error: ‘size_t’ has not been declared
+       size_t *__restrict __stacksize)
+       ^~~~~~
+/usr/include/pthread.h:391:7: error: ‘size_t’ has not been declared
+       size_t __stacksize) __THROW __nonnull ((1));
+       ^~~~~~
+/usr/include/pthread.h:398:6: error: ‘size_t’ has not been declared
+      size_t __cpusetsize,
+      ^~~~~~
+/usr/include/pthread.h:405:6: error: ‘size_t’ has not been declared
+      size_t __cpusetsize,
+      ^~~~~~
+/usr/include/pthread.h:448:11: error: ‘size_t’ has not been declared
+           size_t __buflen)
+           ^~~~~~
+/usr/include/pthread.h:475:52: error: ‘size_t’ has not been declared
+ extern int pthread_setaffinity_np (pthread_t __th, size_t __cpusetsize,
+                                                    ^~~~~~
+/usr/include/pthread.h:480:52: error: ‘size_t’ has not been declared
+ extern int pthread_getaffinity_np (pthread_t __th, size_t __cpusetsize,
+                                                    ^~~~~~
+/usr/include/pthread.h:1030:11: error: ‘__clockid_t’ has not been declared
+           __clockid_t *__restrict __clock_id)
+           ^~~~~~~~~~~
+/usr/include/pthread.h:1035:11: error: ‘__clockid_t’ has not been declared
+           __clockid_t __clock_id)
+           ^~~~~~~~~~~
+/usr/include/pthread.h:1130:7: error: ‘__clockid_t’ has not been declared
+       __clockid_t *__clock_id)
+       ^~~~~~~~~~~
+In file included from /usr/include/c++/7/bits/exception_ptr.h:38:0,
+                 from /usr/include/c++/7/exception:142,
+                 from /usr/include/c++/7/new:40,
+                 from /usr/include/c++/7/bits/stl_construct.h:59,
+                 from /usr/include/c++/7/bits/stl_tempbuf.h:60,
+                 from /usr/include/c++/7/bits/stl_algo.h:62,
+                 from /usr/include/c++/7/algorithm:62,
+                 from threads-demo.cpp:586:
+/usr/include/c++/7/bits/cxxabi_init_exception.h:63:32: error: ‘size_t’ was not declared in this scope
+       __cxa_allocate_exception(size_t) _GLIBCXX_NOTHROW;
+                                ^~~~~~
+/usr/include/c++/7/bits/cxxabi_init_exception.h:63:32: note: suggested alternative:
+In file included from /usr/include/c++/7/cstdlib:41:0,
+                 from /usr/include/c++/7/stdlib.h:36,
+                 from threads-demo.cpp:581:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:231:26: note:   ‘std::size_t’
+   typedef __SIZE_TYPE__  size_t;
+                          ^~~~~~
+In file included from /usr/include/c++/7/exception:142:0,
+                 from /usr/include/c++/7/new:40,
+                 from /usr/include/c++/7/bits/stl_construct.h:59,
+                 from /usr/include/c++/7/bits/stl_tempbuf.h:60,
+                 from /usr/include/c++/7/bits/stl_algo.h:62,
+                 from /usr/include/c++/7/algorithm:62,
+                 from threads-demo.cpp:586:
+/usr/include/c++/7/bits/exception_ptr.h: In function ‘std::__exception_ptr::exception_ptr std::make_exception_ptr(_Ex)’:
+/usr/include/c++/7/bits/exception_ptr.h:185:71: error: ‘__cxxabiv1::__cxa_allocate_exception’ cannot be used as a function
+           void *__e = __cxxabiv1::__cxa_allocate_exception(sizeof(_Ex));
+                                                                       ^
+threads-demo.cpp: In function ‘void WriteArray(int*, int, int)’:
+threads-demo.cpp:686:9: error: ‘printf’ was not declared in this scope
+         printf("%d:%d, ",i,arr[i]);
+         ^~~~~~
+threads-demo.cpp:686:9: note: suggested alternative: ‘uint’
+         printf("%d:%d, ",i,arr[i]);
+         ^~~~~~
+         uint
+threads-demo.cpp:689:5: error: ‘printf’ was not declared in this scope
+     printf("\r\n");
+     ^~~~~~
+threads-demo.cpp:689:5: note: suggested alternative: ‘uint’
+     printf("\r\n");
+     ^~~~~~
+     uint
+threads-demo.cpp: In function ‘void* my_thread(void*)’:
+threads-demo.cpp:773:5: error: ‘printf’ was not declared in this scope
+     printf( "Thread %d started from %d with length %d...\n",
+     ^~~~~~
+threads-demo.cpp:773:5: note: suggested alternative: ‘uint’
+     printf( "Thread %d started from %d with length %d...\n",
+     ^~~~~~
+     uint
+threads-demo.cpp: In function ‘void* gen_arr(void*)’:
+threads-demo.cpp:787:5: error: ‘printf’ was not declared in this scope
+     printf( "Thread %d started from %d to %d...\n",
+     ^~~~~~
+threads-demo.cpp:787:5: note: suggested alternative: ‘uint’
+     printf( "Thread %d started from %d to %d...\n",
+     ^~~~~~
+     uint
+threads-demo.cpp: In function ‘void* transfer_arr(void*)’:
+threads-demo.cpp:803:5: error: ‘printf’ was not declared in this scope
+     printf( "Thread %d started from %d to %d...\n",
+     ^~~~~~
+threads-demo.cpp:803:5: note: suggested alternative: ‘uint’
+     printf( "Thread %d started from %d to %d...\n",
+     ^~~~~~
+     uint
+threads-demo.cpp: In function ‘void* sort_arr(void*)’:
+threads-demo.cpp:821:5: error: ‘printf’ was not declared in this scope
+     printf( "Thread %d started sorting from %d to %d...\n",
+     ^~~~~~
+threads-demo.cpp:821:5: note: suggested alternative: ‘uint’
+     printf( "Thread %d started sorting from %d to %d...\n",
+     ^~~~~~
+     uint
+threads-demo.cpp: In function ‘void GenerateIndexes(int*, insert_sort**&, int, int&, bool, bool)’:
+threads-demo.cpp:861:5: error: ‘printf’ was not declared in this scope
+     printf("Length %d sorted by %d threads\n",arrlength,threadcount);
+     ^~~~~~
+threads-demo.cpp:861:5: note: suggested alternative: ‘uint’
+     printf("Length %d sorted by %d threads\n",arrlength,threadcount);
+     ^~~~~~
+     uint
+In file included from threads-demo.cpp:583:0:
+threads-demo.cpp: In function ‘int timeval_to_ms(timeval*, timeval*)’:
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_sec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_sec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_sec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_usec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_usec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_usec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_usec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_sec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:922:5: error: ‘struct timeval’ has no member named ‘tv_usec’
+     timersub( after, before, &res );
+     ^
+threads-demo.cpp:923:23: error: ‘struct timeval’ has no member named ‘tv_sec’
+     return 1000 * res.tv_sec + res.tv_usec / 1000;
+                       ^~~~~~
+threads-demo.cpp:923:36: error: ‘struct timeval’ has no member named ‘tv_usec’
+     return 1000 * res.tv_sec + res.tv_usec / 1000;
+                                    ^~~~~~~
+threads-demo.cpp: In function ‘int main(int, char**)’:
+threads-demo.cpp:934:9: error: ‘printf’ was not declared in this scope
+         printf( "Argument error.\n" );
+         ^~~~~~
+threads-demo.cpp:934:9: note: suggested alternative: ‘uint’
+         printf( "Argument error.\n" );
+         ^~~~~~
+         uint
+threads-demo.cpp:949:9: error: ‘printf’ was not declared in this scope
+         printf( "Not enough memory for array!\n" );
+         ^~~~~~
+threads-demo.cpp:949:9: note: suggested alternative: ‘uint’
+         printf( "Not enough memory for array!\n" );
+         ^~~~~~
+         uint
+threads-demo.cpp:954:20: error: ‘time’ was not declared in this scope
+     srand( ( int ) time( NULL ) );
+                    ^~~~
+threads-demo.cpp:954:20: note: suggested alternative: ‘stime’
+     srand( ( int ) time( NULL ) );
+                    ^~~~
+                    stime
+threads-demo.cpp:956:5: error: ‘printf’ was not declared in this scope
+     printf( "Random numbers generetion started..." );
+     ^~~~~~
+threads-demo.cpp:956:5: note: suggested alternative: ‘uint’
+     printf( "Random numbers generetion started..." );
+     ^~~~~~
+     uint
+In file included from threads-demo.cpp:580:0:
+threads-demo.cpp:963:25: error: ‘stdout’ was not declared in this scope
+                 fflush( stdout );
+                         ^
+threads-demo.cpp:963:25: note: suggested alternative: ‘strtouq’
+threads-demo.cpp:963:17: error: ‘fflush’ was not declared in this scope
+                 fflush( stdout );
+                 ^~~~~~
+make: *** [threads-demo] Error 1
+16:37:51 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo

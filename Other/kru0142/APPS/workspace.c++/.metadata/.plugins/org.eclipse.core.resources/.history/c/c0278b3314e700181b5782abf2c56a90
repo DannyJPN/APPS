@@ -1,0 +1,472 @@
+
+// ***********************************************************************
+//
+// Demo program for subject Computer Architectures and Paralel systems
+// Petr Olivka, Dept. of Computer Science, FEECS, VSB-TU Ostrava
+// email:petr.olivka@vsb.cz
+//
+// Threads programming example for Linux (10/2016)
+// For the propper testing is necessary to have at least 2 cores CPU
+//
+// ***********************************************************************
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <sys/time.h>
+#include <sys/param.h>
+#include <pthread.h>
+#include <algorithm>
+
+#define TYPE int
+#define DIRECTION true
+class task_part
+{
+public:
+    int id;                 // user identification
+    int from, length;       // data range
+    TYPE *data;             // array
+    TYPE max;               // result
+
+    task_part( int myid, int first, int num, TYPE *ptr ) :
+        id( myid ), from( first ), length( num ), data( ptr ) {}
+
+    TYPE get_result() { return max; }
+
+
+    // function search_max search the largest number in part of array
+    // from the left (included) up to the right element
+    TYPE search_max()
+    {
+        TYPE max_elem = data[ from ];
+        for ( int i = 1; i < length; i++ )
+            if ( max_elem < data[ from + i ] )
+                max_elem = data[ from + i ];
+        return max_elem;
+    }
+
+
+};
+class sorter
+{
+public:
+        unsigned int id;                 // user identification
+        int begin, end;       // data range
+        TYPE *array;             // array
+        bool dir;
+
+        sorter( int myid, int first, int last, TYPE *ptr ,bool direct) :
+                id( myid ), begin( first ), end( last ), array( ptr ) ,dir(direct){}
+
+        virtual TYPE *sort(bool up)=0;
+         ~sorter(){}
+
+};
+
+class insert_sort: public sorter
+{
+public:
+
+        insert_sort( int myid, int first, int last, TYPE *& ptr ,bool direct) :
+            sorter(myid,first,last,ptr,direct) {}
+
+        TYPE* sort(bool up)
+        {
+
+
+
+            for (int i = this->begin; i < this->end; i++)
+                {
+                    int j = i + 1;
+                    TYPE tmp = array[j];
+
+                    if(up)
+                    {
+                         while (j > begin && tmp < array[j-1])
+                            {
+                               array[j] = array[j-1];
+                               j--;
+                            }
+                         array[j] = tmp;
+
+                    }
+                    else
+                    {
+                        while (j > begin && tmp > array[j-1])
+                                {
+                               array[j] = array[j-1];
+                               j--;
+                                }
+                       array[j] = tmp;
+
+                     }
+
+
+
+
+                }
+            return array;
+
+        }
+
+
+};
+
+TYPE * Merge(TYPE* arr1,TYPE*arr2,int start1, int end1, int start2,int end2,bool up)
+{
+    int firstin=start1,secondin=start2;
+    int current = 0;
+    TYPE *merged = new int [end1-start1+1 + end2-start2+1];
+
+
+    while(firstin<=end1&&secondin<=end2)
+    {
+
+    	if(up)
+    	{
+    		  if(arr1[firstin]<arr2[secondin])
+    		        {
+    		            merged[current++] = arr1[firstin++];
+
+    		        }
+    		        else
+    		        {
+    		            merged[current++] = arr2[secondin++];
+
+    		        }
+    	}
+    	else
+    	{
+    		  if(arr1[firstin]>arr2[secondin])
+    		     {
+    		          merged[current++] = arr1[firstin++];
+
+    		     }
+    		     else
+    		    	{
+    		    		merged[current++] = arr2[secondin++];
+
+    		    	}
+
+    	}
+
+
+    }
+
+    while(secondin<=end2)
+    {
+            merged[current++] = arr2[secondin++];
+    }
+
+    while(firstin<=end1)
+    {
+            merged[current++] = arr1[firstin++];
+   }
+
+
+    return merged;
+}
+
+void WriteArray(TYPE*arr,int start,int end)
+{
+    for(int i = start;i<=end;i++)
+    {
+        printf("%d:%d, ",i,arr[i]);
+
+    }
+    printf("\r\n");
+
+}
+
+
+
+
+// Thread will search the largest element in array
+// from element arg->from with length of arg->length.
+// Result will be stored to arg->max.
+void *my_thread( void *void_arg )
+{
+    task_part *ptr_task = ( task_part * ) void_arg;
+
+    printf( "Thread %d started from %d with length %d...\n",
+        ptr_task->id, ptr_task->from, ptr_task->length );
+
+    ptr_task->max = ptr_task->search_max();
+
+    printf( "Found maximum in thread %d is %d\n", ptr_task->id, ptr_task->max );
+
+    return NULL;
+}
+
+void *gen_arr( void *void_arg )
+{
+    insert_sort*ptr_task = ( insert_sort * ) void_arg;
+
+    printf( "Thread %d started from %d to %d...\n",
+        ptr_task->id, ptr_task->begin, ptr_task->end );
+    unsigned int seednum = ptr_task->id+ptr_task->begin+ ptr_task->end;
+    for(int i=ptr_task->begin;i<=ptr_task->end;i++)
+    {
+        ptr_task->array[i] = rand_r(&seednum) % 1000 -500;
+
+    }
+
+
+    return NULL;
+}
+void *sort_arr( void *void_arg )
+{
+    insert_sort*ptr_task = ( insert_sort * ) void_arg;
+
+    printf( "Thread %d started sorting from %d to %d...\n",
+        ptr_task->id, ptr_task->begin, ptr_task->end );
+
+    ptr_task->sort(true);
+
+
+    return NULL;
+}
+
+
+
+
+TYPE* MultiMerge(insert_sort** arrays,int pthread_num)
+{
+
+    TYPE* multimerged = arrays[0]->array;
+    /*
+        multimerged = Merge(multimerged,arrays[1],starts[0],ends[0] ,starts[1],ends[1]);
+        multimerged = Merge(multimerged,arrays[2],starts[0],ends[1] ,starts[2],ends[2]);
+        multimerged = Merge(multimerged,arrays[3],starts[0],ends[2] ,starts[3],ends[3]);
+        multimerged = Merge(multimerged,arrays[4],starts[0],ends[3] ,starts[4],ends[4]);*/
+         /*printf("%d\t%d\t%d\t%d\n",starts[0],ends[0] ,starts[1],ends[1]);
+        printf("%d\t%d\t%d\t%d\n",starts[0],ends[1] ,starts[2],ends[2]);
+        printf("%d\t%d\t%d\t%d\n",starts[0],ends[2] ,starts[3],ends[3]);
+        printf("%d\t%d\t%d\t%d\n",starts[0],ends[3] ,starts[4],ends[4]);*/
+    for(int i = 0;i<pthread_num-1;i++)
+    {
+       // printf("TEST:\t%d\t%d\t%d\t%d\n",starts[0],ends[i] ,starts[i+1],ends[i+1]);
+        multimerged = Merge(multimerged,arrays[i+1]->array,arrays[0]->begin,arrays[i]->end ,arrays[i+1]->begin,arrays[i+1]->end,DIRECTION);
+
+    }
+
+    return multimerged;
+
+}
+void GenerateIndexes(TYPE*source,insert_sort**& arr,int arrlength,int&threadcount)
+{
+    printf("Length %d sorted by %d threads\n",arrlength,threadcount);
+     if(threadcount>arrlength)
+    {
+        threadcount=arrlength;
+    }
+    int**indexes = new int*[2];
+    for(int i =0;i<2;i++)
+    {
+        indexes[i] =new int [threadcount];
+    }
+
+    int part = arrlength/threadcount;
+    int real = part;
+    int first=0,last = 0;
+    pthread_t *threads = new pthread_t[threadcount];
+    for(int i = 0;i<threadcount;i++)
+    {
+        if(i<arrlength%threadcount)
+        {
+            real = part+1;
+        }
+        else
+        {
+            real = part;
+        }
+        last = first + real-1;
+        indexes[0][i] = first;
+        indexes[1][i] = last;
+         //printf("%d - %d\n",first,last);
+        arr[i] = new insert_sort(i,first,last,source,DIRECTION);
+        //arr[i] = sort(source,first,last);
+
+        pthread_create(&threads[i],NULL,gen_arr,arr[i]);
+        //WriteArray(arr[i],first,last);
+
+
+
+        first +=real;
+    }
+    for(int i =0;i<threadcount;i++)
+    {
+
+        pthread_join(threads[i],NULL);
+    }
+
+
+}
+
+// Time interval between two measurements
+int timeval_to_ms( timeval *before, timeval *after )
+{
+    timeval res;
+    timersub( after, before, &res );
+    return 1000 * res.tv_sec + res.tv_usec / 1000;
+}
+
+#define LENGTH_LIMIT 10000000
+
+int main( int na, char **arg )
+{
+    // The number of elements must be used as program argument
+    if ( na != 2 && na!=3)
+    {
+        //printf( "Specify number of elements, at least %d.\n", LENGTH_LIMIT );
+    	printf( "Argument error.\n" );
+    	return 0;
+    }
+    int my_length = atoi( arg[ 1 ] );
+    int threadcount = atoi(arg[2]);
+ /*  if ( my_length < LENGTH_LIMIT )
+    {
+        printf( "The number of elements must be at least %d.\n", LENGTH_LIMIT );
+        return 0;
+    }*/
+
+    // array allocation
+    TYPE *my_array = new TYPE [ my_length ];
+    if ( !my_array )
+    {
+        printf( "Not enough memory for array!\n" );
+        return 1;
+    }
+
+    // Initialization of random number generator
+    srand( ( int ) time( NULL ) );
+
+    printf( "Random numbers generetion started..." );
+    for ( int i = 0; i < my_length; i++ )
+    {
+            my_array[ i ] = rand() % ( my_length * 10 );
+            if ( !( i % LENGTH_LIMIT ) )
+            {
+                printf( "." );
+                fflush( stdout );
+            }
+    }
+
+    printf( "\nMaximum number search using two threads...\n" );
+    pthread_t pt1, pt2;
+    task_part tp1( 1, 0, my_length / 2, my_array );
+    task_part tp2( 2, my_length / 2, my_length - my_length / 2, my_array );
+    timeval time_before, time_after;
+
+    // Time recording before searching
+    gettimeofday( &time_before, NULL );
+
+
+    // Threads starting
+    pthread_create( &pt1, NULL, my_thread, &tp1 );
+    pthread_create( &pt2, NULL, my_thread, &tp2 );
+
+    // Waiting for threads completion
+    pthread_join( pt1, NULL );
+    pthread_join( pt2, NULL );
+
+    // Time recording after searching
+    gettimeofday( &time_after, NULL );
+
+    printf( "The found maximum: %d\n", MAX( tp1.get_result(), tp2.get_result() ) );
+    printf( "The search time: %d [ms]\n", timeval_to_ms( &time_before, &time_after ) );
+
+    printf( "\nMaximum number search using one thread...\n" );
+
+    gettimeofday( &time_before, NULL );
+
+    // Searching in single thread
+    task_part single( 333, 0, my_length, my_array );
+    TYPE res = single.search_max();
+
+    gettimeofday( &time_after, NULL );
+
+    printf( "The found maximum: %d\n", res );
+    printf( "The search time: %d [ms]\n", timeval_to_ms( &time_before, &time_after ) );
+//___________________________________________________
+
+    TYPE *arrtosort = new TYPE[my_length];
+    TYPE* arrtosinglesort = new TYPE[my_length];
+  /*  int partlength = my_length/2;
+    pthread_t thr1, thr2;
+    insert_sort part1( 1, 0, 0+partlength-1, arrtosort );
+    insert_sort part2( 2, 0+partlength, my_length-1 , arrtosort);
+    printf("Range %d %d\n",part1.begin,part1.end);
+    printf("Range %d %d\n",part2.begin,part2.end);
+
+    // Threads starting
+     pthread_create( &thr1, NULL, gen_arr, &part1 );
+     pthread_create( &thr2, NULL, gen_arr, &part2 );
+     // Waiting for threads completion
+         pthread_join( thr1, NULL );
+         pthread_join( thr2, NULL );
+         WriteArray(part1.array,part1.begin,part1.end);
+         WriteArray(part2.array,part2.begin,part2.end);
+         //WriteArray(arrtosort,0,my_length-1);
+
+         part1.sort(true);
+         part2.sort(true);
+         printf("________________________________\n");
+         WriteArray(part1.array,part1.begin,part1.end);
+         WriteArray(part2.array,part2.begin,part2.end);
+        // WriteArray(arrtosort,0,my_length-1);
+
+         printf("________________________________\n");
+TYPE*merge = Merge(part1.array,part2.array,part1.begin,part1.end,part2.begin,part2.end);
+WriteArray(merge,0,my_length-1);
+*/
+
+insert_sort** parts = new insert_sort*[threadcount];
+GenerateIndexes(arrtosort,parts,my_length,threadcount);
+for(int i = 0;i<my_length;i++)
+{
+	arrtosinglesort[i] = arrtosort[i];
+}
+insert_sort singler(-1,0,my_length-1,arrtosinglesort,DIRECTION);
+//WriteArray(arrtosort,0,my_length-1);
+
+
+timeval aftersort,foresort,afterthr,forethr;
+gettimeofday(&forethr,NULL);
+printf("Sorting %d elements by %d threads started:\n",my_length,threadcount);
+pthread_t * threads = new pthread_t[threadcount];
+
+for(int i = 0;i<threadcount;i++)
+{
+	pthread_create(&threads[i],NULL,sort_arr,parts[i]);
+
+}
+
+for(int i = 0;i<threadcount;i++)
+{
+	pthread_join(threads[i],NULL);
+
+}
+TYPE*sorted = MultiMerge(parts,threadcount);
+gettimeofday(&afterthr,NULL);
+
+printf("Sorted %d elements by %d threads in %d milisecs\n",my_length,threadcount,timeval_to_ms(&forethr,&afterthr));
+//WriteArray(sorted,0,my_length-1);
+gettimeofday(&foresort,NULL);
+printf("Sorting %d elements singlethread started:\n",my_length);
+TYPE*singlesorted =singler.sort(DIRECTION);
+//WriteArray(singlesorted,0,my_length-1);
+
+gettimeofday(&aftersort,NULL);
+printf("Sorted %d elements singlethread in %d milisecs\n",my_length,timeval_to_ms(&foresort,&aftersort));
+
+for(int i = 0;i<threadcount;i++)
+{
+	delete parts[i];
+}
+delete[] parts;
+delete[] arrtosort;
+delete[] arrtosinglesort;
+delete[] sorted;
+delete[] singlesorted;
+}

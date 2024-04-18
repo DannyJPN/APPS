@@ -1,0 +1,102 @@
+// **************************************************************************
+//
+//               Demo program for labs
+//
+// Subject:      Computer Architectures and Parallel systems
+// Author:       Petr Olivka, petr.olivka@vsb.cz, 08/2016
+// Organization: Department of Computer Science, FEECS,
+//               VSB-Technical University of Ostrava, CZ
+//
+// File:         Main program for LEDs
+//
+// **************************************************************************
+
+#include "mbed.h"
+
+int main()
+{
+	// LEDs on K64F-KIT - instances of class DigitalOut
+	DigitalOut KIT_LED1( PTA1 );
+	DigitalOut KIT_LED2( PTA2 );
+
+	DigitalOut upLED1( PTC0 );
+	DigitalOut upLED2( PTC1 );
+	DigitalOut upLED3( PTC2 );
+	DigitalOut upLED4( PTC3 );
+	DigitalOut upLED5( PTC4 );
+	DigitalOut upLED6( PTC5 );
+	DigitalOut upLED7( PTC7 );
+	DigitalOut upLED8( PTC8 );
+
+	DigitalOut LEDS [8] ={upLED1,upLED2,upLED3,upLED4,upLED5,upLED6,upLED7,upLED8};
+	// Button on K64F-KIT - instance of class DigitalIn
+	DigitalIn KIT_Button1( PTC9 );
+	DigitalIn KIT_Button2( PTC10 );
+	DigitalIn KIT_Button3( PTC11 );
+	DigitalIn KIT_Button4( PTC12 );
+
+
+	//Other variables
+	short ledcount=0;
+
+    while( 1 )
+    {
+    	/*int delay = 500;
+
+    	KIT_LED1 = !KIT_LED1; 	// invert LED1 state
+
+    	if ( KIT_Button1 == 0 ) 	// button pressed?
+    	{
+    		delay /= 10;		// speed up blinking
+    		KIT_LED2 = !KIT_LED2;
+    	}
+    	else
+    		KIT_LED2 = 0; 		// LED2 off
+
+    	wait_ms( delay );*/
+    	int delay = 500;
+    	if ( KIT_Button1 == 0) 	// button pressed?
+    	    {
+
+
+    		for	(short i = 0;i <= ledcount;i++)
+    		    {
+    				LEDS[i]=1;
+    			}
+
+
+
+    		if(ledcount<8)
+    		{
+    			ledcount++;
+
+    		}
+    		else
+    		{
+    			ledcount = 1;
+    			for	(short i = 1;i < 8;i++)
+    			    {
+    			    	LEDS[i]=0;
+    			    }
+    		}
+
+    		wait_ms(delay);
+
+    	   	}
+
+
+    }
+}
+
+
+short CountLeds(DigitalOut LEDS [])
+{
+	short count = 0;
+for	(short i = 0;i <= 8;i++)
+    {
+		if(LEDS[i]==1) count++;
+	}
+return count;
+}
+
+

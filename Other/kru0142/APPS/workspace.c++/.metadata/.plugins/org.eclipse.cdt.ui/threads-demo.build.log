@@ -1,0 +1,6 @@
+16:37:51 **** Incremental Build of configuration Default for project threads-demo ****
+make all 
+g++ -g -pthread threads-demo.cpp -o threads-demo
+
+16:37:51 Build Finished. 0 errors, 0 warnings. (took 465ms)
+

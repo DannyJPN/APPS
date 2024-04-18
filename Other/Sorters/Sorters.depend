@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1541362655 source:c:\users\stanislav\dropbox\uni\vsb\vsb\bc_ivt_ii\s3\apps\other\sorters\main.cpp
+	<iostream>
+
+1541398715 source:c:\users\dan krupa\dropbox\uni\vsb\vsb\bc_ivt_ii\s3\apps\other\sorters\main.cpp
+	<iostream>
+	<time.h>
+	<stdlib.h>
+
+1541405668 source:c:\users\dan\dropbox\uni\vsb\vsb\bc_ivt_ii\s3\apps\other\sorters\main.cpp
+	<iostream>
+	<time.h>
+	<stdlib.h>
+
